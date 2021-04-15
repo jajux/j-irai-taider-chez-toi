@@ -7,6 +7,8 @@
     <title>J'irai t'aider chez toi</title>
 </head>
 <body>
-    
+    <footer>
+        <p>&copy; Copyright {{date('Y')}} &middot;</p>
+    </footer>
 </body>
 </html>
