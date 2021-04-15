@@ -7,8 +7,8 @@
     <title>J'irai t'aider chez toi</title>
 </head>
 <body>
-    <footer>
-        <p>&copy; Copyright {{date('Y')}} &middot;</p>
-    </footer>
+    @include('incs.nav_home')
+    @yield('content')
+    @include('incs.footer')
 </body>
 </html>
