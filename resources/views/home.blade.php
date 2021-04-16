@@ -1,11 +1,11 @@
 @extends('base')
-@section('title', 'Accueil')
+@section(config('app.name'))
 
 @section('content')
-    <div class="card mb-3 mt-5 " style="background-color: #f3969a;">
+    <div class="card mb-3 mt-5 " style="background-color: #61b3ac;">
         <div class="row no-gutters">
             <div class="col-md-5">
-                <img class="img-fluid" src="images/home_page.jpg" alt="">
+                <img class="img-fluid" src="#" alt="">
             </div>
             <div class="jumbotron text-center mt-5 col-md-7">
                 <h1 class="display-4 ">J'irai t'aider chez toi</h1>
