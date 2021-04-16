@@ -1,7 +1,6 @@
 @extends('base')
-@section('title')
-    Accueil
-@endsection
+@section('title', 'Accueil')
+
 @section('content')
     <div class="card mb-3 mt-5 " style="background-color: #f3969a;">
         <div class="row no-gutters">
