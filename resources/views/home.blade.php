@@ -3,7 +3,6 @@
     Accueil
 @endsection
 @section('content')
-    {{-- @dump(Auth::user()) --}}
     <div class="card mb-3 mt-5 " style="background-color: #f3969a;">
         <div class="row no-gutters">
             <div class="col-md-5">
