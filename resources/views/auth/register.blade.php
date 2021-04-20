@@ -28,7 +28,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="address" value="{{ __('Adresse') }}" />
-                <x-jet-input id="autocomplete" type="tel" size="10" minlenght="10" maxlenght="10"
+                <x-jet-input id="autocomplete" type="text" size="10" minlenght="10" maxlenght="10"
                     class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus
                     autocomplete="Adress" />
             </div>
@@ -98,3 +98,36 @@
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
+
+
+{{-- javascript code --}}
+<script
+    src="https://maps.google.com/maps/api/js?key=AIzaSyAAhU2l1X6LuhOrmICxF2M2XSurtoFt4tI&amp;libraries=places&amp;callback=initAutocomplete"
+    type="text/javascript">
+</script>
+<script>
+    $(document).ready(function() {
+        $("#lat_area").addClass("d-none");
+        $("#long_area").addClass("d-none");
+    });
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    function initialize() {
+        var options = {
+            componentRestrictions: {
+                country: "FR"
+            }
+        };
+        var input = document.getElementById('autocomplete');
+        var autocomplete = new google.maps.places.Autocomplete(input, options);
+        autocomplete.addListener('place_changed', function() {
+            var place = autocomplete.getPlace();
+            $('#latitude').val(place.geometry['location'].lat());
+            $('#longitude').val(place.geometry['location'].lng());
+            $("#lat_area").removeClass("d-none");
+            $("#long_area").removeClass("d-none");
+        });
+    }
+</script>
+
