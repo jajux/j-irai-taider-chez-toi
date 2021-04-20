@@ -15,6 +15,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        // Mise en forme de la date fr
+        setlocale(LC_TIME, config('app.locale'));
     }
 
     //  * Register any application services.

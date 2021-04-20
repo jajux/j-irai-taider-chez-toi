@@ -56,6 +56,8 @@
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     Laravel has WOAUH, thorough  covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                                    Date : {{ \Carbon\Carbon::now()->isoFormat('LL') }}
+                                    Date : {{ \Carbon\Carbon::now()->calendar() }}
                                 </div>
                             </div>
                         </div>
