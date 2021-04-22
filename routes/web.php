@@ -13,5 +13,3 @@ Route::get('about', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-Route::get("autocomplete", [AutoAddressController::class, "autocomplete"]);
