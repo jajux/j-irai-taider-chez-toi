@@ -56,14 +56,36 @@
         @endif
 
         <div class="w-md-75">
-            <!-- Name -->
+            
+            <!-- Modification du Prénom -->
             <div class="form-group">
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}" wire:model.defer="state.name" autocomplete="name" />
-                <x-jet-input-error for="name" />
+                <x-jet-label for="firstname" value="{{ __('Prénom') }}" />
+                <x-jet-input id="firstname" type="text" class="{{ $errors->has('firstname') ? 'is-invalid' : '' }}" wire:model.defer="state.firstname" autocomplete="firstname" />
+                <x-jet-input-error for="firstname" />
             </div>
 
-            <!-- Email -->
+            <!-- Modification du Nom -->
+            <div class="form-group">
+                <x-jet-label for="lastname" value="{{ __('Name') }}" />
+                <x-jet-input id="lastname" type="text" class="{{ $errors->has('lastname') ? 'is-invalid' : '' }}" wire:model.defer="state.lastname" autocomplete="lastname" />
+                <x-jet-input-error for="lastname" />
+            </div>
+
+            <!-- Modification de l'adresse -->
+            <div class="form-group">
+                <x-jet-label for="address" value="{{ __('adresse') }}" />
+                <x-jet-input id="address" type="text" class="{{ $errors->has('address') ? 'is-invalid' : '' }}" wire:model.defer="state.address" autocomplete="address" />
+                <x-jet-input-error for="address" />
+            </div>
+
+            <!-- Modification numéro de téléphone -->
+            <div class="form-group">
+                <x-jet-label for="phone_number" value="{{ __('Téléphone') }}" />
+                <x-jet-input id="address" type="text" class="{{ $errors->has('phone_number') ? 'is-invalid' : '' }}" wire:model.defer="state.phone_number" autocomplete="phone_number" />
+                <x-jet-input-error for="phone_number" />
+            </div>
+
+            <!--Modification Email -->
             <div class="form-group">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}" wire:model.defer="state.email" />

@@ -9,20 +9,48 @@
         <div class="card-body">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
-
+                {{-- Champ prénom --}}
                 <div class="form-group">
-                    <x-jet-label value="{{ __('Name') }}" />
+                    <x-jet-label value="{{ __('Prénom') }}" />
 
-                    <x-jet-input class="{{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name"
-                                 :value="old('name')" required autofocus autocomplete="name" />
-                    <x-jet-input-error for="name"></x-jet-input-error>
+                    <x-jet-input class="{{ $errors->has('firstname') ? 'is-invalid' : '' }}" type="text"
+                        name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" />
+                    <x-jet-input-error for="firstname"></x-jet-input-error>
+                </div>
+
+                {{-- Champ nom --}}
+                <div class="form-group">
+                    <x-jet-label value="{{ __('Nom') }}" />
+
+                    <x-jet-input class="{{ $errors->has('lastname') ? 'is-invalid' : '' }}" type="text"
+                        name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" />
+                    <x-jet-input-error for="lastname"></x-jet-input-error>
+                </div>
+
+                {{-- Champ adresse --}}
+                <div class="form-group">
+                    <x-jet-label for="autocomplete" value="{{ __('Adresse') }}" />
+
+                    <x-jet-input class="{{ $errors->has('address') ? 'is-invalid' : '' }}" type="text" name="address"
+                        :value="old('address')" required autofocus autocomplete="address" id="autocomplete" />
+                    <x-jet-input-error for="address"></x-jet-input-error>
+                </div>
+
+                {{-- Champ numéro de téléphone --}}
+                <div class="form-group">
+                    <x-jet-label value="{{ __('Téléphone') }}" />
+
+                    <x-jet-input class="{{ $errors->has('phone_number') ? 'is-invalid' : '' }}" type="tel"
+                        name="phone_number" :value="old('phone_number')" required autofocus
+                        autocomplete="phone_number" />
+                    <x-jet-input-error for="phone_number"></x-jet-input-error>
                 </div>
 
                 <div class="form-group">
                     <x-jet-label value="{{ __('Email') }}" />
 
                     <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
-                                 :value="old('email')" required />
+                        :value="old('email')" required />
                     <x-jet-input-error for="email"></x-jet-input-error>
                 </div>
 
@@ -30,14 +58,15 @@
                     <x-jet-label value="{{ __('Password') }}" />
 
                     <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
-                                 name="password" required autocomplete="new-password" />
+                        name="password" required autocomplete="new-password" />
                     <x-jet-input-error for="password"></x-jet-input-error>
                 </div>
 
                 <div class="form-group">
                     <x-jet-label value="{{ __('Confirm Password') }}" />
 
-                    <x-jet-input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
+                    <x-jet-input class="form-control" type="password" name="password_confirmation" required
+                        autocomplete="new-password" />
                 </div>
 
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -46,9 +75,9 @@
                             <x-jet-checkbox id="terms" name="terms" />
                             <label class="custom-control-label" for="terms">
                                 {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                            'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'">'.__('Terms of Service').'</a>',
-                                            'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'">'.__('Privacy Policy').'</a>',
-                                    ]) !!}
+    'terms_of_service' => '<a target="_blank" href="' . route('terms.show') . '">' . __('Terms of Service') . '</a>',
+    'privacy_policy' => '<a target="_blank" href="' . route('policy.show') . '">' . __('Privacy Policy') . '</a>',
+]) !!}
                             </label>
                         </div>
                     </div>
@@ -69,3 +98,35 @@
         </div>
     </x-jet-authentication-card>
 </x-guest-layout>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript"
+    src="https://maps.google.com/maps/api/js?key=AIzaSyAAhU2l1X6LuhOrmICxF2M2XSurtoFt4tI&amp;libraries=places&callback=initAutocomplete">
+</script>
+<script>
+    $(document).ready(function() {
+        $("#latitudeArea").addClass("d-none");
+        $("#longtitudeArea").addClass("d-none");
+    });
+
+</script>
+<script>
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    function initialize() {
+        var input = document.getElementById('autocomplete');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.addListener('place_changed', function() {
+            var place = autocomplete.getPlace();
+            $('#latitude').val(place.geometry['location'].lat());
+            $('#longitude').val(place.geometry['location'].lng());
+
+            $("#latitudeArea").removeClass("d-none");
+            $("#longtitudeArea").removeClass("d-none");
+        });
+    }
+
+</script>

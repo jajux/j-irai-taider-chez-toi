@@ -41,4 +41,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
     }
+    public function autocomplete(Request $request){
+        return view('autocomplete');
+    }
 }

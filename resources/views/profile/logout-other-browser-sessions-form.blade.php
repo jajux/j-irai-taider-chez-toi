@@ -87,10 +87,10 @@
                 </x-jet-secondary-button>
 
                 <x-jet-button class="ml-2" wire:click="logoutOtherBrowserSessions" wire:loading.attr="disabled">
-                    {{ __('Log out Other Browser Sessions') }}
+                    {{ __('Confirmation de déconnexion de sessions') }}
                 </x-jet-button>
             </x-slot>
         </x-jet-dialog-modal>
-    </x-slot>
+    </x-slot>   
 
 </x-jet-action-section>
