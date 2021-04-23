@@ -17,10 +17,10 @@
             <div class="w-md-75">
                 <!-- Token Name -->
                 <div class="form-group">
-                    <x-jet-label for="name" value="{{ __('Token Name') }}" />
-                    <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
-                                 wire:model.defer="createApiTokenForm.name" autofocus />
-                    <x-jet-input-error for="name" />
+                    <x-jet-label for="firstname" value="{{ __('Token Firstname') }}" />
+                    <x-jet-input id="firstname" type="text" class="{{ $errors->has('firstname') ? 'is-invalid' : '' }}"
+                                 wire:model.defer="createApiTokenForm.firstname" autofocus />
+                    <x-jet-input-error for="firstname" />
                 </div>
 
                 <!-- Token Permissions -->
@@ -71,10 +71,10 @@
                 <!-- API Token List -->
                 <x-slot name="content">
                     <div>
-                        @foreach ($this->user->tokens->sortBy('name') as $token)
+                        @foreach ($this->user->tokens->sortBy('firstname') as $token)
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    {{ $token->name }}
+                                    {{ $token->firstname }}
                                 </div>
 
                                 <div class="d-flex">

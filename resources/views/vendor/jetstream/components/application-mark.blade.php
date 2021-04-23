@@ -4,5 +4,5 @@
 </svg> --}}
 {{-- logo place on  dashboard & user profile --}}
 <a class="d-flex justify-content-center mb-4" href="/"  {{ $attributes }}>
-    <img  width="100" src="images/logo garros v3.png" alt="logo site user profile">
+    <img  width="100" src="images\J-irai_t-aider_chez_toi_logo.png" alt="logo site user profile">
 </a>
