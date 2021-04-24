@@ -1,10 +1,10 @@
-<x-guest-layout>
+<x-guest-layout >
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
 
-        <div class="card-body">
+        <div class="card-body shadow-lg  ">
 
             <x-jet-validation-errors class="mb-3 rounded-0" />
 
@@ -14,9 +14,9 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('login') }}" >
                 @csrf
-                <div class="form-group">
+                <div class="form-group ">
                     <x-jet-label value="{{ __('Email') }}" />
 
                     <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"

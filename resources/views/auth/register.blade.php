@@ -1,12 +1,12 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
+<x-guest-layout >
+    <x-jet-authentication-card >
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
 
         <x-jet-validation-errors class="mb-3" />
 
-        <div class="card-body">
+        <div class="card-body  shadow-lg">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 {{-- Champ prénom --}}
