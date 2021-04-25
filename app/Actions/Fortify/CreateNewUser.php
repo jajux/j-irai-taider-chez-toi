@@ -44,4 +44,5 @@ class CreateNewUser implements CreatesNewUsers
     public function autocomplete(Request $request){
         return view('autocomplete');
     }
+
 }

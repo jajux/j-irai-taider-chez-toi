@@ -14,9 +14,9 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('login') }}" >
+            <form method="POST" action="{{ route('login') }}"  class="text-dark">
                 @csrf
-                <div class="form-group ">
+                <div class="form-group">
                     <x-jet-label value="{{ __('Email') }}" />
 
                     <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"
@@ -49,7 +49,7 @@
                             </a>
                         @endif
 
-                        <x-jet-button>
+                        <x-jet-button class="bg-success">
                             {{ __('Log in') }}
                         </x-jet-button>
                     </div>

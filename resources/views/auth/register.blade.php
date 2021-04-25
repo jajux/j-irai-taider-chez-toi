@@ -10,7 +10,7 @@
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 {{-- Champ prénom --}}
-                <div class="form-group">
+                <div class="form-group text-dark">
                     <x-jet-label value="{{ __('Prénom') }}" />
 
                     <x-jet-input class="{{ $errors->has('firstname') ? 'is-invalid' : '' }}" type="text"
@@ -19,7 +19,7 @@
                 </div>
 
                 {{-- Champ nom --}}
-                <div class="form-group">
+                <div class="form-group text-dark">
                     <x-jet-label value="{{ __('Nom') }}" />
 
                     <x-jet-input class="{{ $errors->has('lastname') ? 'is-invalid' : '' }}" type="text"
@@ -28,7 +28,7 @@
                 </div>
 
                 {{-- Champ adresse --}}
-                <div class="form-group">
+                <div class="form-group text-dark">
                     <x-jet-label for="autocomplete" value="{{ __('Adresse') }}" />
 
                     <x-jet-input class="{{ $errors->has('address') ? 'is-invalid' : '' }}" type="text" name="address"
@@ -37,7 +37,7 @@
                 </div>
 
                 {{-- Champ numéro de téléphone --}}
-                <div class="form-group">
+                <div class="form-group text-dark">
                     <x-jet-label value="{{ __('Téléphone') }}" />
 
                     <x-jet-input class="{{ $errors->has('phone_number') ? 'is-invalid' : '' }}" type="tel"
@@ -46,7 +46,8 @@
                     <x-jet-input-error for="phone_number"></x-jet-input-error>
                 </div>
 
-                <div class="form-group">
+                                {{-- Champ email --}}
+                <div class="form-group text-dark">
                     <x-jet-label value="{{ __('Email') }}" />
 
                     <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
@@ -54,7 +55,8 @@
                     <x-jet-input-error for="email"></x-jet-input-error>
                 </div>
 
-                <div class="form-group">
+                                {{-- Champ mot de passe --}}
+                <div class="form-group text-dark">
                     <x-jet-label value="{{ __('Password') }}" />
 
                     <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
@@ -62,7 +64,7 @@
                     <x-jet-input-error for="password"></x-jet-input-error>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group text-dark">
                     <x-jet-label value="{{ __('Confirm Password') }}" />
 
                     <x-jet-input class="form-control" type="password" name="password_confirmation" required
@@ -70,7 +72,7 @@
                 </div>
 
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                    <div class="form-group">
+                    <div class="form-group text-dark">
                         <div class="custom-control custom-checkbox">
                             <x-jet-checkbox id="terms" name="terms" />
                             <label class="custom-control-label" for="terms">

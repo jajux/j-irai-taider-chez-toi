@@ -63,7 +63,7 @@
                 <!-- Settings Dropdown -->
                 @auth
                     <x-jet-dropdown id="settingsDropdown">
-                        <x-slot name="trigger">
+                        <x-slot name="trigger" >
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <img class="rounded-circle" width="32" height="32" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->firstname }}" />
                             @else

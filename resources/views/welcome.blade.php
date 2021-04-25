@@ -56,15 +56,17 @@
                         possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat
                         numquam
                         repellat.</p>
-                    <a href="#" class="btn btn-dark btn-lg">connexion</a>
+                    <a href="{{ route('register') }}" class="btn btn-dark btn-lg bg-info ">inscription</a>
+                    <a href="{{ route('login') }}" class="btn btn-dark btn-lg bg-success">connexion</a>
+
                 </div>
                 <div class="col-md-5 col-lg-5 my-4 ">
                     <img src="images\hero.png" class="img-fluid  max-width: 100% height: auto" alt="">
                 </div>
             </div>
         </header>
-        
-{{-- Main content --}}
+
+        {{-- Main content --}}
         <main>
             <div class="container-fluid my-5 pt-5 px-5 ">
                 <div class="row justify-content-center text-center  px-4">
