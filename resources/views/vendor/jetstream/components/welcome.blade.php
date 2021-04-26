@@ -1,5 +1,3 @@
-
-  
 <div class="container-fluid my-5 pt-5 px-5 ">
     <div class="row justify-content-center text-center  px-4">
         <div class="card shadow-sm ">
