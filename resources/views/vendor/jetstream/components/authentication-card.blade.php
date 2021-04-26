@@ -1,4 +1,6 @@
-<div class="container">
+<div class="container" style="background-image: url('images/bg_register.png'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover; ">
     <div class="row justify-content-center my-5">
         <div class="col-sm-12 col-md-8 col-lg-5 my-4">
             <div>
