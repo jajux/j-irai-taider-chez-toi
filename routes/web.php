@@ -6,11 +6,14 @@ use Illuminate\Support\Facades\Route;
 // Page accueil
 Route::get('/', function () {
     return view('home');
-});
-Route::get('reservations',function(){
-    return view('reservations');
-});
+})->name('accueil');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//User page services
+Route::middleware(['auth:sanctum', 'verified'])->get('/services', function () {
     return view('services');
 })->name('services');
+
+//User page reservations 
+Route::middleware(['auth:sanctum', 'verified'])->get('/reservations', function () {
+    return view('reservations');
+})->name('reservations');

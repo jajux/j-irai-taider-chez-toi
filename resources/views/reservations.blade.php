@@ -3,10 +3,9 @@
         <h2 class=" font-weight-bold">
             {{ __('Réservations') }}
         </h2>
-        <p>Effectuer vos réservations via les formulaires ci-dessous.</p>
     </x-slot>
 
-    <div class="container-fluid px-1 py-5 mx-auto row justify-content-center">
+    <div class="container-fluid px-1 mx-auto row justify-content-center">
         <div class="col-xl-9 col-lg-10 ">
             <div class="card1 pl-4 pl-md-5 pr-3">
                 <div class="row">
@@ -40,3 +39,4 @@
         </div>
     </div>
 </x-app-layout>
+@include('incs.footer')

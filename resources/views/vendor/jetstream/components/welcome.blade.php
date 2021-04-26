@@ -21,7 +21,7 @@
                             <h5 class="card-title font-weight-bold text-capitalize">bricolage</h5>
                             <p class="card-text">Réservez le service bricolage pour toutes les réparations de
                                 votre domicile.</p>
-                            <a href="#" class="btn btn-success text-capitalize">Réserver le service bricolage</a>
+                            <a href="{{route('reservations')}}" class="btn btn-success text-capitalize">Réserver le service bricolage</a>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                             <h5 class="card-title font-weight-bold text-capitalize">assistance numérique</h5>
                             <p class="card-text">Conseils sur l'installation,
                                 l'utilisation de vos appareil numériques domestiques ?</p>
-                            <a href="#" class="btn btn-success text-capitalize">Assistance numérique</a>
+                            <a href="{{route('reservations')}}" class="btn btn-success text-capitalize">Assistance numérique</a>
                         </div>
                     </div>
                 </div>

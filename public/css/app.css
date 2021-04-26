@@ -10357,20 +10357,6 @@ button:focus {
 
 }
 
-.btn-pink {
-  background: #130606;
-  font-size: 16px;
-  color: #fff;
-  width: 150px;
-  height: 40px;
-  border: 1px solid #FF5252;
-  text-transform: capitalize;
-  margin-top: 20px
-}
-
-.btn-pink:hover {
-  background: #999797;
-}
 
 .fa-angle-right {
   font-size: 18px
