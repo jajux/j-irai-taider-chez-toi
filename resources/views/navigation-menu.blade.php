@@ -13,12 +13,24 @@
             <h3>Services de proximités</h3>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto align-items-baseline">
+
+                @if (Auth::user())
+                <x-jet-nav-link href="{{ route('services') }}" :active="request()->routeIs('services')" class="text-capitalize font-weight-bold text-success">
+                    {{ __('services') }}
+                </x-jet-nav-link>
+
+                <x-jet-nav-link href="{{ route('reservations') }}" :active="request()->routeIs('reservations')" class="text-capitalize font-weight-bold text-success">
+                    {{ __('réservations') }}
+                </x-jet-nav-link>
+                @else
                 <x-jet-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')" class="text-capitalize font-weight-bold text-success">
                     {{ __('connexion') }}
                 </x-jet-nav-link>
                 <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')" class="text-capitalize font-weight-bold text-success">
                     {{ __('inscription') }}
                 </x-jet-nav-link>
+                @endif
+
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <x-jet-dropdown id="teamManagementDropdown">
