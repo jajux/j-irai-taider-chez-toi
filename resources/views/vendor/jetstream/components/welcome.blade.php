@@ -44,5 +44,4 @@
     </div>
 </div>
 </div>
-@include('incs.footer')
 

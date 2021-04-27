@@ -10308,12 +10308,7 @@ h3 {
   font-size: 0.875rem !important;
 }
 
-/* booking pages */
-/* body {
-  background-color: #6200EA;
-  color: #fff;
-  overflow-x: hidden
-} */
+/* reservations pages */
 
 button:focus {
   -moz-box-shadow: none !important;
@@ -10327,7 +10322,7 @@ button:focus {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border: none;
-  background-color: #417471;
+  background-color: #418471;
   color: #fff;
   padding-bottom: 0px;
   padding-top: 20px;
@@ -10340,7 +10335,7 @@ button:focus {
   border-bottom-right-radius: 10px;
   border: none;
   height: 130px;
-  background-color: #fff;
+  background-color: #418471;
   padding-bottom: 0px;
   padding-top: 20px;
   margin-top: 0px;
@@ -10356,7 +10351,6 @@ button:focus {
   height: 100%
 
 }
-
 
 .fa-angle-right {
   font-size: 18px

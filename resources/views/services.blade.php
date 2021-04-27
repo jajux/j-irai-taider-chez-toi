@@ -8,3 +8,4 @@
 
     <x-jet-welcome />
 </x-app-layout>
+@include('incs.footer')
