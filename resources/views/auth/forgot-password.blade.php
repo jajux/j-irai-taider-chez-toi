@@ -4,7 +4,7 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
-        <div class="card-body">
+        <div class="card-body text-dark">
 
             <div class="mb-3">
                 {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
@@ -21,7 +21,7 @@
             <form method="POST" action="/forgot-password">
                 @csrf
 
-                <div class="form-group">
+                <div class="form-group ">
                     <x-jet-label value="Email" />
                     <x-jet-input type="email" name="email" :value="old('email')" required autofocus />
                 </div>
