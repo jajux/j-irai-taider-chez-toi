@@ -5,7 +5,7 @@
         </h2>
         <p>Description des services proposés et les modalités.</p>
     </x-slot>
+    
 
-    <x-jet-welcome />
 </x-app-layout>
 @include('incs.footer')
