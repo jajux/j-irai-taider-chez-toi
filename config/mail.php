@@ -35,7 +35,7 @@ return [
 
     'mailers' => [
         'smtp' => [
-            'transport' => 'mailgun',
+            'transport' => 'smtp',
             'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
@@ -53,6 +53,7 @@ return [
             'domain' => env('MAILGUN_DOMAIN'),
             'secret' => env('MAILGUN_SECRET'),
             'endpoint' => env('MAILGUN_ENDPOINT', 'api.eu.mailgun.net'),
+            'transport'=> 'mailgun',
         ],
 
         'postmark' => [
@@ -88,6 +89,11 @@ return [
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'projet.garros.com'),
         'name' => env('MAIL_FROM_NAME', 'Garros'),
+    ],
+
+    'to' => [
+        'address' =>  env('MAIL_FROM_ADDRESS', 'projet.garros.com'),
+        'name' => 'Dev Example'
     ],
 
     /*

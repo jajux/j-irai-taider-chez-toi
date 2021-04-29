@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class OrderShipped extends Mailable
+class FirstEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,8 +28,8 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->from('projet.garros@gmail.com')
-                            ->view('emails.orders.shipped')
-                            ->text('emails.orders.shipped_plain');
+        return $this 
+            ->from('projet.garros@gmail.com')
+            ->view('email-template');
     }
 }
