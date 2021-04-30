@@ -41,7 +41,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4">
                 <div class="card border-light p-4">
                     <div class="card-body">
-                        <h2 class="display-2 mb-2">98%</h2><span>Notre de satisfaction de l'année dernière</span>
+                        <h2 class="display-2 mb-2">98%</h2><span>Pourcentage de satisfaction de l'année dernière</span>
                     </div>
                 </div>
             </div>

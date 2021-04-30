@@ -4,9 +4,9 @@
             <div class="row">
                 <div class="col-md-12 pr-0">
                     <div class="card-body  p-3 h-100">
-                        <div class="d-flex flex-row bd-highlight pt-2">
-                            <div class="mb-2">
-                                <h1 class="text-capitalize">J'irai t'aider chez toi</h1>
+                        <div class="d-flex flex-row bd-highlight pt-2 ">
+                            <div class="mb-2 ">
+                                <h1 class="text-capitalize title-service ">J'irai t'aider chez toi</h1>
                             </div>
                         </div>
                     </div>
@@ -19,9 +19,8 @@
                         </div>
                         <div class="card-body mt-3 mb-2">
                             <h5 class="card-title font-weight-bold text-capitalize">bricolage</h5>
-                            <p class="card-text">Réservez le service bricolage pour toutes les réparations de
-                                votre domicile.</p>
-                            <a href="{{route('reservations')}}" class="btn btn-success text-capitalize">Réserver le service bricolage</a>
+                            <p class="card-text">Un service de bricolage à domicile est proposé pour les réparations ou améliorations de votre appartement, maison et jardin.</p>
+                            <a href="{{route('services')}}" class="btn btn-success text-capitalize">en savoir plus sur le bricolage</a>
                         </div>
                     </div>
                 </div>
@@ -35,7 +34,7 @@
                             <h5 class="card-title font-weight-bold text-capitalize">assistance numérique</h5>
                             <p class="card-text">Conseils sur l'installation,
                                 l'utilisation de vos appareil numériques domestiques ?</p>
-                            <a href="{{route('reservations')}}" class="btn btn-success text-capitalize">Assistance numérique</a>
+                            <a href="{{route('services')}}" class="btn btn-success text-capitalize">en savoir plus sur l'assistance numérique</a>
                         </div>
                     </div>
                 </div>
