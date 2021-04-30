@@ -11,7 +11,6 @@ Route::get('/', function () {
 })->name('accueil');
 
 //User page services
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/services', function () {
     return view('services');
 })->name('services');

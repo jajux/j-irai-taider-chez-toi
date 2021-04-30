@@ -2,6 +2,7 @@
  
 namespace App\Providers;
  
+use Laravel\Fortify\Fortify;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use NascentAfrica\Jetstrap\JetstrapFacade;
@@ -22,6 +23,16 @@ class AppServiceProvider extends ServiceProvider
 
         // method core UI src= https://github.com/nascent-africa/jetstrap#installation
         JetstrapFacade::useCoreUi3();
+        
+        // // Email Verification
+        // Fortify::verifyEmailView(function () {
+        //     return view('auth.verify-email');
+        // });
+        
+        // Confirm Password
+        Fortify::confirmPasswordView(function () {
+            return view('auth.confirm-password');
+        });
 
     }
 

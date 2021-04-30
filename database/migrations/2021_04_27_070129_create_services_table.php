@@ -16,11 +16,8 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('lastname');
-            $table->string('phone_number');
-            $table->string('email')->unique();
-            $table->date ('required|date_format:d/m/Y|after:today');
-            $table->longText('message');
+            $table->string('service_bricolage')->unique();
+            $table->string('service_assistance')->unique();
         });
     }
 
