@@ -10315,7 +10315,7 @@ button:focus {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   border: none;
-  outline-width: 0
+  outline-width: 0;
 }
 
 .card1 {
@@ -10327,7 +10327,7 @@ button:focus {
   padding-bottom: 0px;
   padding-top: 20px;
   margin-top: 80px;
-  margin-bottom: 0px
+  margin-bottom: 0px;
 }
 
 .card2 {
@@ -10340,58 +10340,78 @@ button:focus {
   padding-top: 20px;
   margin-top: 0px;
   margin-bottom: 80px;
-  position: relative
+  position: relative;
 }
 
 .left-side {
-  height: 100%
+  height: 100%;
 }
 
 .right-side{
-  height: 100%
+  height: 100%;
 
 }
 
 .fa-angle-right {
-  font-size: 18px
+  font-size: 18px;
 }
 
 .fit-image {
   width: 100%;
-  object-fit: contain
+  object-fit: contain;
 }
 
 .girl-img {
   height: 320px;
-  width: 200px
+  width: 200px;
 }
 
 .blocks {
   position: absolute;
   top: -100px;
   background-color: #fff;
-  color: #000
+  color: #000;
 }
 
 .img-block {
   width: 130px;
   height: 150px;
   margin: 10px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
   .card2 {
-      height: 160px
+      height: 160px;
   }
 
   .blocks {
-      top: -8px
+      top: -8px;
   }
 
   .img-block {
       width: 80px;
       height: 100px;
-      margin-bottom: 5px
+      margin-bottom: 5px;
   }
 }
+
+/* Services page */
+.title-service{
+  color: #418471;
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 40px;
+}
+a.btn-hover{
+  background-color: #418471;
+  color: #fff;
+}
+a.btn-hover:hover{
+  background-color: #72b8a4;
+  color: #fff;
+}
+.display-2{
+  color: #418471;
+}
+

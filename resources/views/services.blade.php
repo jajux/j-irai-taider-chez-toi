@@ -3,39 +3,66 @@
         <h2 class=" font-weight-bold">
             {{ __('Nos services') }}
         </h2>
-        <p>Description des services proposés et les modalités.</p>
     </x-slot>
-    <div class="container shadow-lg">
-        <div>
-            <h1 class="text-center pt-5 text-capitalize">j'irai t'aider chez toi</h1>
-                 <p class="card-text text-center mb-5">
-                    <small class="text-muted">Ces services vous sont proposés et éxécutés par l'association.
-                        <strong>
-                            <a href="https::/garros-service.fr" class="text-dark" target="_blank">Garros Services</a>
-                        </strong>
-                    </small>
-                </p>
-        </div>
-    </div>    
     <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-12 col-md-6 order-2 order-lg-1">
-                <img src="images\bricoleurs.png" class="img-fluid" alt="...">
+        <div class="row justify-content-center mb-5 mb-md-7">
+            <div class="col-12 col-md-8 text-center">
+                <h2 class="title-service mb-4">j'irai t'aider chez toi</h2>
+                <p class="lead text-muted">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis expedita ipsum omnis iusto aspernatur quos consequatur fugiat ut maiores.
+                </p>
             </div>
-            <div class="col-12 col-md-6 order-2 order-lg-2">
-                <h1 class="col-12 col-md-5 order-1 order-lg-2">Bricolage</h1>
-                <p class="lead">Vous désirez effectuer des réparations ou des améliorations dans votre logement.</p>
-                <p>L'association de régie de quartier Garros Services vous offre la possibilité de réserver ce services depuis cette plateforme.</p>
+        </div>
+        <div class="row row-grid align-items-center mb-5 mb-md-7 shadow-lg">
+            <div class="col-12 col-md-5">
+                <h2 class="font-weight-bolder mb-4">Assistance Numérique</h2>
+                   <p class="lead">
+                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam amet molestiae recusandae tempora, nemo debitis possimus odio quia placeat, minus ratione a error excepturi deserunt!
+                   </p>
+                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <a href="{{route('reservations')}}" class="btn mt-3 btn-hover">Réservation</a>
             </div>
-            <div class="">
-                <a href="{{route('reservations')}}" class="btn btn-success">Cliquez pour réserver un service bricolage</a>
+            <div class="col-12 col-md-6 ml-md-auto">
+                <img src="images/assistance.png" class="img-fluid" alt="">
+            </div>
+        </div>
+        <div class="row row-grid align-items-center mb-5 mb-md-7 shadow-lg">
+            <div class="col-12 col-md-5 order-md-2">
+                <h2 class="font-weight-bolder mb-4">Bricolage</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam amet molestiae recusandae tempora, nemo debitis possimus odio quia placeat, minus ratione a error excepturi deserunt!
+                    </p>
+                        <a href="{{route('reservations')}}" class="btn mt-3 btn-hover">Réservation</a>
+            </div>
+            <div class="col-12 col-md-6 mr-lg-auto">
+                <img src="images/bricolage_peinture.png" class="img-fluid" alt="">
+            </div>
+        </div>
+        <div class="row shadow-lg text-center card-number">
+            <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4">
+                <div class="card border-light p-4">
+                    <div class="card-body">
+                        <h2 class="display-2 mb-2">98%</h2><span>Notre de satisfaction de l'année dernière</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4">
+                <div class="card border-light p-4">
+                    <div class="card-body">
+                        <h2 class="display-2 mb-2">24/7</h2>
+                        <span>Vous pouvez faire vos demandes — 7j/7 et 24h/24
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4">
+                <div class="card border-light p-4">
+                    <div class="card-body">
+                        <h2 class="display-2 mb-2">+100</h2>
+                        <span>Interventions de nos équipes auprès des adhérents</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="pattern-bottom"></div>
-
-
-
-
 </x-app-layout>
 @include('incs.footer')
