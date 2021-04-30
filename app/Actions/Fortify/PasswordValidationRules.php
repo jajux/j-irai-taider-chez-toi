@@ -15,6 +15,6 @@ trait PasswordValidationRules
     {
         return ['required', new Password, 'confirmed'];
         
-        (new Password)->length(8)->requireSpecialCharacter(1);
+        (new Password)->length(8)->requireSpecialCharacter();
     }
 }

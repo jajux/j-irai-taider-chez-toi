@@ -1,4 +1,4 @@
-<x-guest-layout >
+<x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -14,21 +14,21 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('login') }}"  class="text-dark">
+            <form method="POST" action="{{ route('login') }}" class="text-dark">
                 @csrf
                 <div class="form-group">
                     <x-jet-label value="{{ __('Email') }}" />
 
-                    <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"
-                                 name="email" :value="old('email')" required />
+                    <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
+                        :value="old('email')" required />
                     <x-jet-input-error for="email"></x-jet-input-error>
                 </div>
 
                 <div class="form-group">
                     <x-jet-label value="{{ __('Password') }}" />
 
-                    <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password"
-                                 name="password" required autocomplete="current-password" />
+                    <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                        type="password" name="password" required autocomplete="current-password" />
                     <x-jet-input-error for="password"></x-jet-input-error>
                 </div>
 
@@ -48,13 +48,14 @@
                                 {{ __('Forgot your password?') }}
                             </a>
                         @endif
-
                         <x-jet-button class="bg-success">
                             {{ __('Log in') }}
                         </x-jet-button>
                     </div>
+                    <a class="text-muted mt-3 d-flex justify-content-end"
+                        href="{{ route('register') }}">{{ __('Pas encore inscrit?') }}</a>
                 </div>
-            </form>
         </div>
+        </form>
     </x-jet-authentication-card>
 </x-guest-layout>
