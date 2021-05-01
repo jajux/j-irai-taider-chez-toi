@@ -1,4 +1,6 @@
 const mix = require('laravel-mix');
+require('laravel-mix-mjml');
+
 
 /*
  |--------------------------------------------------------------------------
@@ -13,7 +15,8 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .webpackConfig(require('./webpack.config'));
+    .webpackConfig(require('./webpack.config'))
+    .mjml();
 
 if (mix.inProduction()) {
     mix.version();

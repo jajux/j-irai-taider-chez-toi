@@ -6,19 +6,22 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Resa;
 
-class FirstEmail extends Mailable
+class Registered extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $resa;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Resa $resa)
     {
-        //
+        $this->resa = $resa;
     }
 
     /**
@@ -28,8 +31,8 @@ class FirstEmail extends Mailable
      */
     public function build()
     {
-        return $this 
-            ->from('projet.garros@gmail.com')
-            ->view('email-template');
+        return $this->from($this->resa->email, $this->resa->name)
+                    ->subject('Bienvenue !')
+                    ->view('mail.registered', ['user' => auth()->user()]);
     }
 }

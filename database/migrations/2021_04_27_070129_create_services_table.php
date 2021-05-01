@@ -18,6 +18,8 @@ class CreateServicesTable extends Migration
             $table->timestamps();
             $table->string('service_bricolage')->unique();
             $table->string('service_assistance')->unique();
+            $table->string('image')->nullable();
+            $table->text('description');
         });
     }
 
