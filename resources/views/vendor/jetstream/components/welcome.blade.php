@@ -28,7 +28,7 @@
                     <div class="card profile-card-5">
                         <div class="card-img-block bg-secondary">
                             <img class="card-img-top" class="img-fluid  max-width: 100% height: auto"
-                                src="images\assistance.png" alt="illustration assistance numérique">
+                                src="images\numerique.png" alt="illustration assistance numérique">
                         </div>
                         <div class="card-body  mt-3 mb-2">
                             <h5 class="card-title font-weight-bold text-capitalize">assistance numérique</h5>

@@ -23,7 +23,7 @@
                 <a href="{{route('reservations')}}" class="btn mt-3 btn-hover">Réservation</a>
             </div>
             <div class="col-12 col-md-6 ml-md-auto">
-                <img src="images/assistance.png" class="img-fluid" alt="">
+                <img src="images/mentor.png" class="img-fluid" alt="">
             </div>
         </div>
         <div class="row row-grid align-items-center mb-5 mb-md-7 shadow-lg">

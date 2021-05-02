@@ -3,6 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>j'irai t'aider chez toi</title>
+        <meta name="description" content="plateforme de réservations de services de proximités de l'association de régie de quartier Garros Services">
+        <meta name="author" content="Jawad EL HATTAB">
+        <meta name="copyright" content="Tous droits réservés">
+        <meta name="rating" content="general">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>

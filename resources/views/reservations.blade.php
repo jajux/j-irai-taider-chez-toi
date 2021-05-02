@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="container-fluid px-1 mx-auto row justify-content-center  ">
+    <div class="container-fluid px-1 mx-auto row justify-content-center">
         <div class="col-xl-9 col-lg-10 ">
             <div class="card1 pl-4 pl-md-5 pr-3 shadow-lg">
                 <div class="row">
@@ -18,12 +18,12 @@
                     </div>
                     <div class="right-side col-md-6 row justify-content-center">
                         <div class="d-flex">
-                            <img class="girl-img fit-image" src="images\booking.png">
+                            <img class="girl-img fit-image img-fluid" src="images\booking.png">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card2 pl-4 pl-md-5 pr-3">
+            {{-- <div class="card2 pl-4 pl-md-5 pr-3">
                 <div class="row px-3 ">
                     <div class="col-md-12">
                         <div class="blocks row d-flex rounded bg-secondary">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </x-app-layout>
