@@ -23,24 +23,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="card2 pl-4 pl-md-5 pr-3">
-                <div class="row px-3 ">
-                    <div class="col-md-12">
-                        <div class="blocks row d-flex rounded bg-secondary">
-                            <div class="d-flex flex-column">
-                                <img class="fit-image img-block" src="images\bricoleurs.png">
-                            </div>
-                            <div class="d-flex flex-column">
-                                <img class="fit-image img-block" src="images\services_booking.png">
-                            </div>
-                            <div class="d-flex flex-column">
-                                <img class="fit-image img-block" src="images\assistance_numerique.png">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </div>
+    @include('incs.footer')
 </x-app-layout>
-@include('incs.footer')

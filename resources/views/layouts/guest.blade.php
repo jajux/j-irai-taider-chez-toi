@@ -19,7 +19,11 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <!-- Style footer -->
+         <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+        <!-- Tailwind styles to bootstrap -->
         <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+        
 
 
         <!-- Scripts -->

@@ -1,0 +1,179 @@
+#container {
+    width: 100%;
+    height: 330px;
+    color: #418471;
+}
+
+#part1 {
+    width: 100%;
+    height: 280px;
+    background-color: #fff;
+}
+
+#part2 {
+    width: 100%;
+    height: 50px;
+    background-color: #418471;
+    color: #fff;
+    position: relative;
+    top: -15px;
+}
+
+#assoinfo {
+    width: 14%;
+    height: 280px;
+    position: relative;
+    left: 8%;
+    top: 30px;
+}
+
+#sitelink {
+    font-size: 35px;
+    color: #418471;
+}
+
+#sitelink:hover {
+    color: #418471;
+}
+
+#title {
+    color: #418471;
+    position: relative;
+    top: 0px;
+    font-size: 14.1px
+}
+
+#detail {
+    color: #418471;
+    font-size: 16px
+}
+
+#explore {
+    width: 14%;
+    height: 280px;
+    position: relative;
+    top: -235px;
+    left: 29%
+}
+
+#txt1,
+#txt2,
+#txt3{
+    color: #418471;
+    font-size: 20px
+}
+
+.link {
+    display: flex;
+    width: 90px;
+    height: 40px;
+    color: #aaa7a7;
+    background-color: transparent;
+    border-top: 2px solid white;
+    position: relative;
+    top: -10px
+}
+
+.link:hover,
+.link1:hover {
+    color: #e65100
+}
+
+#visit {
+    width: 14%;
+    height: 280px;
+    position: relative;
+    top: -515px;
+    left: 42%
+}
+
+.text {
+    color: #aaa7a7;
+    font-size: 14px;
+    margin-top: -10px
+}
+
+#legal {
+    width: 14%;
+    height: 280px;
+    position: relative;
+    top: -800px;
+    left: 59.5%
+}
+
+.link1 {
+    display: flex;
+    width: 150px;
+    height: 40px;
+    color: #aaa7a7;
+    background-color: transparent;
+    border-top: 2px solid white;
+    position: relative;
+    top: -10px;
+    margin-top: 7px
+}
+
+.target{
+    color:#fff;
+}
+
+@media only screen and (max-width:1000px) {
+   #assoinfo {
+        width: 20%
+    }
+
+    #sitelink {
+        font-size: 30px
+    }
+
+}
+
+@media only screen and (max-width:850px) {
+   #assoinfo {
+        position: relative;
+        left: 3%
+    }
+
+    #txt1,
+    #txt2,
+    #txt3{
+        font-size: 15px
+    }
+
+    #explore {
+        position: relative;
+        top: -240px;
+        left: 26%
+    }
+
+    #sitelink {
+        font-size: 25px
+    }
+
+    #detail {
+        font-size: 13px
+    }
+
+    .link {
+        width: 60px
+    }
+
+    #visit {
+        position: relative;
+        top: -520px;
+        left: 37%
+    }
+
+    .text {
+        font-size: 13px
+    }
+
+    #legal {
+        position: relative;
+        top: -800px;
+        left: 54%
+    }
+    #part1 {
+        height: 250px
+    }
+}
