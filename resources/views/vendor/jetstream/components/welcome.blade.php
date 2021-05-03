@@ -1,6 +1,6 @@
-<div class="container-fluid my-5 pt-5 px-5 ">
+<div class="container-fluid my-5 pt-5 px-5">
     <div class="row justify-content-center text-center  px-4">
-        <div class="card shadow-sm ">
+        <div class="card  shadow-lg p-3 ">
             <div class="row">
                 <div class="col-md-12 pr-0">
                     <div class="card-body  p-3 h-100">
@@ -14,7 +14,7 @@
                 <div class="col-md-6 mt-6 text-center">
                     <div class="card profile-card-5 ">
                         <div class="card-img-block bg-secondary">
-                            <img class="card-img-top" src="images\bricolage.png"
+                            <img class="card-img-top" src="images\brico.png"
                                 class="img-fluid  max-width: 100% height: auto" alt="illustration bricolage">
                         </div>
                         <div class="card-body mt-3 mb-2">
