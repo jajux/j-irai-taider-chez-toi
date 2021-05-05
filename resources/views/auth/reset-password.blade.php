@@ -4,7 +4,7 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
-        <div class="card-body">
+        <div class="card-body text-dark">
 
             <x-jet-validation-errors class="mb-3" />
 
@@ -17,7 +17,7 @@
                     <x-jet-label value="{{ __('Email') }}" />
 
                     <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
-                                 :value="old('email', $request->email)" required autofocus />
+                        :value="old('email', $request->email)" required autofocus />
                     <x-jet-input-error for="email"></x-jet-input-error>
                 </div>
 
@@ -25,15 +25,15 @@
                     <x-jet-label value="{{ __('Password') }}" />
 
                     <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
-                                 name="password" required autocomplete="new-password" />
+                        name="password" required autocomplete="new-password" />
                     <x-jet-input-error for="password"></x-jet-input-error>
                 </div>
 
                 <div class="form-group">
                     <x-jet-label value="{{ __('Confirm Password') }}" />
 
-                    <x-jet-input class="{{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" type="password"
-                                 name="password_confirmation" required autocomplete="new-password" />
+                    <x-jet-input class="{{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+                        type="password" name="password_confirmation" required autocomplete="new-password" />
                     <x-jet-input-error for="password_confirmation"></x-jet-input-error>
                 </div>
 

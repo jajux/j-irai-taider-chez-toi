@@ -9,14 +9,18 @@ class Reservation extends Model
 {
     use HasFactory;
 
-public function service()
-{
-    return $this->hasMany(Reservation::class);
-}
+    protected $fillable = [
+        'user_id',
+    ];
+    
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 
-public function user()
-{
+    public function user()
+    {
     return $this->belongsTo(User::class);
-}
+    }
     
 }

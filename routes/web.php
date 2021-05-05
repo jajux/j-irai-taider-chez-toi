@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\AutoAddressController;
+use App\Http\Controllers\ReservationController;
 
 // Page accueil
 Route::get('/', function () {
@@ -17,9 +18,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/services', function () {
 
 //User page reservations 
 Route::middleware(['auth:sanctum', 'verified'])->get('/reservations', function () {
-    return view('reservations');
+     return view('reservations');
 })->name('reservations');
-
-
-// EMAIL
-Route::get("send-email", [EmailController::class, "sendEmail"]);

@@ -31,6 +31,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
     ];
+    
+        // Relations commandes
+        public function orders()
+        {
+            return $this->hasMany(Order::class);
+        }
 
     /**
      * The attributes that should be hidden for arrays.
@@ -61,8 +67,6 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+    
 
-    public function service(){
-        return $this->hasMany(Service::class);
-    }
 }
