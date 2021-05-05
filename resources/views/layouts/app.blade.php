@@ -45,7 +45,6 @@
     <!-- Tailwind styles to bootstrap -->
     <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
 
-
     @livewireStyles
 
     <!-- Scripts -->
@@ -67,6 +66,8 @@
     <main class="container my-5">
         {{ $slot }}
     </main>
+    
+    @include('incs.footer')
 
     @stack('modals')
 

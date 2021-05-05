@@ -96,4 +96,3 @@
     </section>
     <!--Section: Block Content-->
 </x-app-layout>
-@include('incs.footer')

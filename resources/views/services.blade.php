@@ -29,7 +29,7 @@
                 </p>
                 <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
 
-                <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-hover">Réservation</a>
+                <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-primary">Réservation</a>
             </div>
             <div class="col-12 col-md-6 ml-md-auto">
                 <img src="images/mentor.png" class="img-fluid" alt="">
@@ -49,8 +49,7 @@
                     nemo debitis possimus odio quia placeat, minus ratione a error excepturi deserunt!
                 </p>
                 <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
-
-                <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-hover">Réservation</a>
+                <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-primary">Réservation</a>
             </div>
             <div class="col-12 col-md-6 mr-lg-auto">
                 <img src="images/bricolage_peinture.png" class="img-fluid" alt="">
@@ -84,4 +83,3 @@
         </div>
     </div>
 </x-app-layout>
-@include('incs.footer')
