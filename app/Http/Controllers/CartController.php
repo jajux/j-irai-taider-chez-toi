@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -34,7 +36,17 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::find($request->id);
+    
+        Cart::add([
+            'id' => $product->id,
+            'name' => $product->name,
+            'price' => $product->price,
+            'attributes' => [],
+            'associatedModel' => $product,
+          ]
+        );
+        return redirect()->back()->with('cart', 'ok');
     }
 
     /**

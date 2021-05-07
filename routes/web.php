@@ -1,28 +1,21 @@
 <?php
 
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EmailController;
-use App\Http\Controllers\AutoAddressController;
-use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\ProductController;
-use App\Models\Reservation;
+use App\Http\Controllers\PagesController;
 
 // Page accueil
 Route::get('/', function () {
-    return view('home');
+    return view('pages.home');
 })->name('accueil');
 
 // User page services
 Route::middleware(['auth:sanctum', 'verified'])->get('/services', function (){
-        return view('services');
+        return view('pages.services');
     })->name('services');
     
-Route::get('/services', [ProductController::class, 'index'])->name('services');
+Route::get('/services', [PagesController::class, 'services'])->name('services');
 
-    
 //User page reservations 
 Route::middleware(['auth:sanctum', 'verified'])->get('/reservations', function () {
-     return view('reservations');
+     return view('pages.reservations');
 })->name('reservations');

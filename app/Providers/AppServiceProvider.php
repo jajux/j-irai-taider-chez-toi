@@ -2,7 +2,9 @@
  
 namespace App\Providers;
  
+use Darryldecode\Cart\Cart;
 use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use NascentAfrica\Jetstrap\JetstrapFacade;
