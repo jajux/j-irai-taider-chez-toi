@@ -16,43 +16,21 @@
         </div>
         <div class="row row-grid align-items-center mb-5 mb-md-7 shadow-lg">
             <div class="col-12 col-md-5 mt-5">
-                <h2 class="font-weight-bolder mb-4">Assistance Numérique</h2>
-                <h3>Qu'est-ce que l'assistance numérique</h3>
-                <p class="lead">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam amet molestiae recusandae tempora,
-                    nemo debitis possimus odio quia placeat, minus ratione a error excepturi deserunt!
-                </p>
-                <h3>Comment fonctionne ce service</h3>
-                <p class="lead">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam amet molestiae recusandae tempora,
-                    nemo debitis possimus odio quia placeat, minus ratione a error excepturi deserunt!
-                </p>
-                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
-
-                <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-primary">Réservation</a>
+                @foreach ($services as $service)
+                    <h1 class="font-weight-bolder mb-4">{{ $service->title_service }}</h1>
+                    <h3>Objectif du service {{ $service->title_service }}</h3>
+                    <p class="lead">
+                        {{ $service->description_service }}.
+                    </p>
+                    <h3>Comment fonctionne ce service</h3>
+                    <p class="lead">
+                        {{ $service->role_service }}.
+                    </p>
+                    <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-primary">Réservation</a>
+                @endforeach
             </div>
             <div class="col-12 col-md-6 ml-md-auto">
                 <img src="images/mentor.png" class="img-fluid" alt="">
-            </div>
-        </div>
-        <div class="row row-grid align-items-center mb-5 mb-md-7 shadow-lg">
-            <div class="col-12 col-md-5 order-md-2 mt-5">
-                <h2 class="font-weight-bolder mb-4">Bricolage</h2>
-                <h3>Qu'est-ce que le service bricolage</h3>
-                <p class="lead">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam amet molestiae recusandae tempora,
-                    nemo debitis possimus odio quia placeat, minus ratione a error excepturi deserunt!
-                </p>
-                <h3>Comment fonctionne ce service</h3>
-                <p class="lead">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam amet molestiae recusandae tempora,
-                    nemo debitis possimus odio quia placeat, minus ratione a error excepturi deserunt!
-                </p>
-                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
-                <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-primary">Réservation</a>
-            </div>
-            <div class="col-12 col-md-6 mr-lg-auto">
-                <img src="images/bricolage_peinture.png" class="img-fluid" alt="">
             </div>
         </div>
         <div class="row shadow-lg text-center card-number">

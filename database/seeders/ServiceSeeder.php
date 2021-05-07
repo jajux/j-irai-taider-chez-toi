@@ -18,13 +18,17 @@ class ServiceSeeder extends Seeder
         DB::table('services')->insert([
             [
                 'id'=>1,
-                'services_name'=>'Bricolage',
-                'description'=>'service de bricolage à domicile',
+                 'title_service'=>'assistance numérique',
+                 'description_service'=>'Text explicant le service d\'assistance numérique, pour qui , son objectif et par qui est-il réalisé',                    
+                 'role_service' =>'Text explicant le rôle, son fonctionnement, ses modalités, quels sont les services proposés par l\'assistance numérique, son  fonctionnement'       
             ],
             [
                 'id'=>2,
-                'services_name'=>'Assistance Numérique',
-                'description'=>'service d\'assistance numérique',
+                'title_service'=>'bricolage',
+                'description_service'=>
+                     'Text explicatif décrivant le service bricolage, pour qui , son objectif et par qui est-il réalisé',
+                 'role_service' => 
+                    'Text explicant le rôle et le fonctionnement du service bricolage; ses modalités, quels sont les services proposés'     
             ]
         ]);
     }
