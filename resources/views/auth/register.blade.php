@@ -1,5 +1,5 @@
-<x-guest-layout >
-    <x-jet-authentication-card >
+<x-guest-layout>
+    <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
@@ -46,7 +46,7 @@
                     <x-jet-input-error for="phone_number"></x-jet-input-error>
                 </div>
 
-                                {{-- Champ email --}}
+                {{-- Champ email --}}
                 <div class="form-group text-dark">
                     <x-jet-label value="{{ __('Email') }}" />
 
@@ -55,7 +55,7 @@
                     <x-jet-input-error for="email"></x-jet-input-error>
                 </div>
 
-                                {{-- Champ mot de passe --}}
+                {{-- Champ mot de passe --}}
                 <div class="form-group text-dark">
                     <x-jet-label value="{{ __('Password') }}" />
 
@@ -112,21 +112,18 @@
         $("#latitudeArea").addClass("d-none");
         $("#longtitudeArea").addClass("d-none");
     });
-
 </script>
+
 <script>
     google.maps.event.addDomListener(window, 'load', initialize);
-
     function initialize() {
-        var options={
-            componentRestrictions:
-            {
-                country:"FR"
+        var options = {
+            componentRestrictions: {
+                country: "FR"
             }
         };
         var input = document.getElementById('autocomplete');
-        var autocomplete = new google.maps.places.Autocomplete(input,options);
-
+        var autocomplete = new google.maps.places.Autocomplete(input, options);
         autocomplete.addListener('place_changed', function() {
             var place = autocomplete.getPlace();
             $('#latitude').val(place.geometry['location'].lat());

@@ -21,7 +21,7 @@ class CreateAddressesTable extends Migration
             $table->string('address');
             $table->string('postal', 10); 
             $table->string('city', 100);
-            $table->string('phone', 25);
+            $table->string('phone', 10);
             $table->timestamps();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });

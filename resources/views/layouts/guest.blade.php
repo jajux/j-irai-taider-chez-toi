@@ -19,6 +19,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+            <!-- Style resources\views\reservations\reservations.blade.php -->
+    <link rel="stylesheet" href="{{ asset('css/reservations.css') }}">
+
         <!-- Style footer -->
          <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
         <!-- Tailwind styles to bootstrap -->

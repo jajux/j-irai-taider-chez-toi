@@ -15,6 +15,10 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->text('resa_description');
+            $table->dateTime('date_rdv');
+            $table->string('matin');
+            $table->string('apres_midi');
             $table->timestamps();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });

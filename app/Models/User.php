@@ -32,10 +32,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
     ];
     
-        // Relations commandes
-        public function orders()
+        // Relations reservations
+        public function reservations()
         {
-            return $this->hasMany(Order::class);
+            return $this->hasMany(Reservation::class);
         }
 
     /**

@@ -18,7 +18,7 @@
                     </div>
                     <div class="right-side col-md-6 row justify-content-center">
                         <div class="d-flex">
-                            <img class="girl-img fit-image img-fluid" src="images\booking.png">
+                            <img class="girl-img fit-image img-fluid" src="images\info_booking.png">
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="container mt-4" style="background-color: #417471">
-            <h4 class="h2 text-center text-uppercase text-light">Sélectionner le ou les services souhaités</h4>
+            <h4 class="h2 text-center text-uppercase text-light">Ajouter le ou les services souhaités</h4>
     </div>
     <!--Section: Block Content-->
     <section>        
@@ -35,7 +35,7 @@
             <div class="row mb-4">
                 <div class="col-md-5 col-lg-3 col-xl-3">
                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                            <img class="img-fluid w-100" src="images\assistance_numerique.png" alt="">
+                            <img class="img-fluid w-100" src="images\booking_num.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-9 col-xl-9">
@@ -52,8 +52,10 @@
                         </div>
                         <div class="col-lg-5 col-xl-5">
                             <div class="my-4">
-                                <button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
-                                        class="fas fa-shopping-cart pr-2"></i> Ajouter ce service</button>
+                                <a href="">
+                                    {{route('/ajouter_le_service/' .$services->id)}}
+                                    <i class="fas fa-shopping-cart pr-2"> Ajouter ce service</i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +65,7 @@
             <div class="row mb-4">
                 <div class="col-md-5 col-lg-3 col-xl-3">
                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                        <img class="img-fluid w-100" src="images/bricoleurs.png" alt="">
+                        <img class="img-fluid w-100" src="images/worker.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-9 col-xl-9">
@@ -87,8 +89,8 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-right m-4">
-                    <button type="button" class="btn btn-success">
-                       <i class="el el-arrow-right">Suivant</i>
+                    <button type="button" class="btn btn-success ">
+                       <i class="el el-arrow-right ">Suivant</i>
                     </button>
                 </div>
             </div>            
