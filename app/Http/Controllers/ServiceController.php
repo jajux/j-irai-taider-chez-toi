@@ -12,4 +12,5 @@ class ServiceController extends Controller
         // dd($services);
         return view('pages.services')->with('services', $services);
     }
+
 }

@@ -112,10 +112,12 @@
         $("#latitudeArea").addClass("d-none");
         $("#longtitudeArea").addClass("d-none");
     });
+
 </script>
 
 <script>
     google.maps.event.addDomListener(window, 'load', initialize);
+
     function initialize() {
         var options = {
             componentRestrictions: {
@@ -132,4 +134,5 @@
             $("#longtitudeArea").removeClass("d-none");
         });
     }
+
 </script>

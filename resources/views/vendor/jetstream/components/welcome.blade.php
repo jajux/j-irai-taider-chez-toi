@@ -14,7 +14,7 @@
                 <div class="col-md-6 mt-6 text-center">
                     <div class="card profile-card-5 ">
                         <div class="card-img-block bg-secondary">
-                            <img class="card-img-top" src="images\brico.png"
+                            <img class="card-img-top" src="images\home_dilemma.png"
                                 class="img-fluid  max-width: 100% height: auto" alt="illustration bricolage">
                         </div>
                         <div class="card-body mt-3 mb-2">

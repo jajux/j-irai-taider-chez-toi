@@ -2,36 +2,102 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Service;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-    public function index(){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         $services = Service::get();
         // dd($services);
         return view('pages.reservations')->with('services', $services);
+
     }
-    public function show(){
-        return view('reservations.reservations');
+    public function resa(){
+        $reservations = Reservation::get();
+        return view('reservations.create')->with('reservations', $reservations);
+    }
+    
+    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('reservations.create');
+    }
+    
+    public function enregistrer_reservation( Request $request){
+        $this->validate($request, 
+        [
+            'services_id'=>'required',
+            'resa_description'=>'required',
+            'date_rdv'=>'required',
+        ]);
+    }
+    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
     }
 
-    // public function ajouter_le_service($id){
-    //     $service = Service::table('tbl_products')
-    //     ->where('id', $id)
-    //     ->first();
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
-    //     $oldCart = Session::has('cart')? Session::get('cart'):null;
-    //     $cart = new Cart($oldCart);
-    //     $cart->add($product, $id);
-    //     Session::put('cart', $cart);
-    //     //dd(Session::get('cart'));
-    //     return redirect::to('/shop');
-    // }
-    // public function sauvegarder_reservation(request $request)
-    // {
-    //     $this->validate(request, ['title_service' =>'required']);
-    // }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }

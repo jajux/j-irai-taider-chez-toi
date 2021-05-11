@@ -52,8 +52,7 @@
                         </div>
                         <div class="col-lg-5 col-xl-5">
                             <div class="my-4">
-                                <a href="">
-                                    {{route('/ajouter_le_service/' .$services->id)}}
+                                <a href="{{URL::to('/reservations/formulaire_reservation') }}">
                                     <i class="fas fa-shopping-cart pr-2"> Ajouter ce service</i>
                                 </a>
                             </div>
@@ -82,9 +81,10 @@
                         </div>
                         <div class="col-lg-5 col-xl-5">
                             <div class="my-4">
-                                <button type="button" class="btn btn-success btn-md mr-1 mb-2"><i
-                                        class="fas fa-shopping-cart pr-2"></i> Ajouter ce service</button>
-                            </div>
+                                    <a href="{{URL::to('/reservations/formulaire_reservation') }}">
+                                        <i class="fas fa-shopping-cart pr-2"> Ajouter ce service</i>
+                                    </a>
+                                </div>
                         </div>
                     </div>
                 </div>

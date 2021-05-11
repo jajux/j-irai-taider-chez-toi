@@ -21,6 +21,7 @@ class CreateReservationsTable extends Migration
             $table->string('apres_midi');
             $table->timestamps();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('services_id')->constrained()->onDelete('cascade');
         });
     }
 
