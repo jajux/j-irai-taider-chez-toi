@@ -42,8 +42,6 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <!-- Style footer -->
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-    <!-- Style resources\views\reservations\reservations.blade.php -->
-    <link rel="stylesheet" href="{{ asset('css/reservations.css') }}">
 
     <!-- Tailwind styles to bootstrap -->
     <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
@@ -52,7 +50,6 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
-    <script src="{{asset('frontend/reservations.js')}}" defer></script>
     
 </head>
 

@@ -11,10 +11,11 @@ class Reservation extends Model
 
     protected $fillable = [
         'user_id',
+        'service_id',
+        'type_service',
         'resa_description',
         'date_rdv',
-        'matin',
-        'apres_midi',
+        'horaire_rdv',
     ];
     
     public function reservations()

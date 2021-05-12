@@ -4,92 +4,85 @@
             {{ __('Formulaire de réservations') }}
         </h2>
     </x-slot>
-    <div class="container mt-5">
+    <div class="container shadow-lg p-5">
         @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <li>{{ $errors }}</li>
+                        <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
         @endif
-        @if (Session::has('status'))
-            <div class="alert alert-success">
-                {{Session::get('status')}}
+
+        <div class="col ">
+            <h4 class="text-center">Suivez les indications, tous les champs sont obligatoires <span
+                    style="color: red">*</span></h4>
+            <br>
+            {{-- checkbox --}}
+            <div class="card p-4">
+                <div class="card-header">
+                    <h6>Choissisez un ou plusieurs services:</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <form action="{{ url('/reservations/enregistrer_reservation') }}" method="post">
+                            @csrf
+                            <input type="hidden" id="user_id" value="{{ Auth::user()->id }}" name="user_id">
+                            <div class="form-group form-check form-check-inline">
+                                <label class="form-group">Assistance numérique</label>
+                                <input class="form-control" type="text" name="assistance">
+                            </div>
+                    </div>
+                </div>
             </div>
-    @endif
-        <div class="row d-flex justify-content-center align-items-center ">
-            <div class="col-md-8">
-                <form action="{{url ('/reservations/enregistrer_reservation')}}" method="POST" class=" shadow-lg">
-                    @csrf
-                    <h1 id="register">Répondez aux questions pour votre demande.</h1>
-                    <div class="all-steps" id="all-steps">
-                        <span class="step"><i class="fas fa-house-user"></i></span>
-                        <span class="step"><i class="fas fa-pen-alt"></i></span>
-                        <span class="step"><i class="fas fa-calendar-check"></i></span>
-                        <span class="step"><i class="fas fa-people-arrows"></i></span>
-                        {{-- <span class="step"><i class="fas fa-comment-dots"></i></span> --}}
-                    </div>
-                    <div class="tab">
-                        <h6>Sélectionner un service ?</h6>
-                        <select name="assistance">
-                            <option value="service">Choisissez</option>
-                            <option value="assistance">assistance numérique</option>
-                            <option value="bricolage">bricolage</option>
-                        </select>
-                    </div>
-                    <div class="tab">
-                        <h6>Description</h6>
-                        <div style="width: 100">
-                            <textarea name="resa_description"></textarea>
+            {{-- /checkbox --}}
+            {{-- description --}}
+            <div class="card ">
+                <div class="card-header">
+                    <div class="form-group">
+                        <label>Description de votre demande</label>
+                        <div class="card-body">
+                            <textarea class="form-control" name="description"></textarea>
                         </div>
                     </div>
-                    {{-- <div class="tab">
-                        <h6>Description</h6>
-                        <textarea name="" id="" cols="90" rows="10"></textarea>ù
-                    </div> --}}
-                    <div class="tab">
-                        <h6>A quelle date souhaitez-vous l'intervention?</h6>
-                        <small>en fonction du calendrier et des disponibilités des équipes *</small>
-                        <p><input type="date" name="date_rdv"></p>
-                    </div>
-                    <div class="tab">
-                        <h6>Préférence du moment de l'intervention</h6>
-                        <small>en fonction du calendrier et des disponibilités des équipes *</small>
-                        <br>
-                        <select class="mt-3" name="service_id">                            
-                            <option value="service">Créneau</option>
-                            <option name="matin" value="matin">matin</option>
-                            <option name="apres_midi" value="après-midi">après-midi</option>
-                        </select>
-                    </div>
-                    {{-- <div class="tab">
-                        <h6>What's your Favourite Song?</h6>
-                        <p><input placeholder="Favourite Song" name="uname"></p>
-                    </div>
-                    <div class="tab">
-                        <h6>What's your Favourite Mobile brand?</h6>
-                        <p><input placeholder="Favourite Mobile Brand" name="uname">
-                        </p>
-                    </div> --}}
-                    <div class="thanks-message text-center" id="text-message">
-                        <img src="{{asset ('images/icones/4.png')}}" width="100" class="mb-4">
-                        <h3>Réservation Validée !!!!</h3>
-                        <span>Nos équipes vont rapidement traité votre demande et vous contacter prochainement.</span>
-                    </div>
-                    <div style="overflow:auto;" id="nextprevious">
-                        <div style="float:right;">
-                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">
-                                <i class="fa fa-angle-double-left"></i>
-                            </button> <button type="button" id="nextBtn" onclick="nextPrev(1)">
-                                <i class="fa fa-angle-double-right"></i>
-                            </button>
+                </div>
+            </div>
+            {{-- /description --}}
+            {{-- date reservation --}}
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="form-group">
+                                <label>Choissisez une date d'éxécution de la demande:</label>
+                            </div>
+                            <div class="card-body">
+                                <input type="date" name="date_rdv">
+                            </div>
+                        </div>
+                        {{-- / date reservation --}}
+                        {{-- Plage horaires --}}
+                        <div class="form-group m-4">
+                            <label>Choissisez la période d'intervention</label>
+                            <select class="form-control" name="horaire">
+                                <option>Horaires</option>
+                                <option>Matin</option>
+                                <option>Après-midi</option>
+                            </select>
                         </div>
                     </div>
-                </form>
+                </div>
+                {{-- /Plage horaires --}}
+                {{-- Confirmation des coordonnées --}}
+                {{-- Confirmation des coordonnées --}}
             </div>
         </div>
-    </div>
-
+        {{-- Validation reservation --}}
+        <input type="submit" value="Valider" class="btn btn-primary">
+        {{-- /Validation reservation --}}
+        {{-- Annulation reservation --}}
+        {{-- Annulation reservation --}}
+        <input type="submit" value="Annuler" class="btn btn-danger">
+        </form>
 </x-app-layout>

@@ -88,11 +88,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-right m-4">
-                    <button type="button" class="btn btn-success ">
-                       <i class="el el-arrow-right ">Suivant</i>
-                    </button>
-                </div>
             </div>            
         </div>
     </section>
