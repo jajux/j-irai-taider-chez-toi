@@ -14,10 +14,16 @@
                 </ul>
             </div>
         @endif
+        @if (Session::has('status'))
+            <div class="alert alert-success">
+                {{Session::get('status')}}
+            </div>
+    @endif
         <div class="row d-flex justify-content-center align-items-center ">
             <div class="col-md-8">
-                <form id="regForm" class=" shadow-lg">
-                    <h1 id="register">Répondez</h1>
+                <form action="{{url ('/reservations/enregistrer_reservation')}}" method="POST" class=" shadow-lg">
+                    @csrf
+                    <h1 id="register">Répondez aux questions pour votre demande.</h1>
                     <div class="all-steps" id="all-steps">
                         <span class="step"><i class="fas fa-house-user"></i></span>
                         <span class="step"><i class="fas fa-pen-alt"></i></span>
@@ -27,35 +33,35 @@
                     </div>
                     <div class="tab">
                         <h6>Sélectionner un service ?</h6>
-                        <select name="service">
+                        <select name="assistance">
                             <option value="service">Choisissez</option>
-                            <option value="">assistance numérique</option>
-                            <option value="">bricolage</option>
+                            <option value="assistance">assistance numérique</option>
+                            <option value="bricolage">bricolage</option>
                         </select>
                     </div>
                     <div class="tab">
                         <h6>Description</h6>
-                            <label for="exampleFormControlTextarea5"></label>
-                            <textarea  id="exampleFormControlTextarea5" rows="3" cols="15"></textarea>
+                        <div style="width: 100">
+                            <textarea name="resa_description"></textarea>
+                        </div>
                     </div>
                     {{-- <div class="tab">
                         <h6>Description</h6>
-                        <textarea name="" id="" cols="90" rows="10"></textarea>
+                        <textarea name="" id="" cols="90" rows="10"></textarea>ù
                     </div> --}}
                     <div class="tab">
                         <h6>A quelle date souhaitez-vous l'intervention?</h6>
                         <small>en fonction du calendrier et des disponibilités des équipes *</small>
-                        <p><input type="date" placeholder="Favourite Shopping site" name="email">
-                        </p>
+                        <p><input type="date" name="date_rdv"></p>
                     </div>
                     <div class="tab">
                         <h6>Préférence du moment de l'intervention</h6>
                         <small>en fonction du calendrier et des disponibilités des équipes *</small>
                         <br>
-                        <select class="mt-3" name="service">                            
+                        <select class="mt-3" name="service_id">                            
                             <option value="service">Créneau</option>
-                            <option value="matin">matin</option>
-                            <option value="après-midi">après-midi</option>
+                            <option name="matin" value="matin">matin</option>
+                            <option name="apres_midi" value="après-midi">après-midi</option>
                         </select>
                     </div>
                     {{-- <div class="tab">
@@ -68,7 +74,7 @@
                         </p>
                     </div> --}}
                     <div class="thanks-message text-center" id="text-message">
-                        <img src="images\J-irai_t-aider_chez_toi_logo.png" width="100" class="mb-4">
+                        <img src="{{asset ('images/icones/4.png')}}" width="100" class="mb-4">
                         <h3>Réservation Validée !!!!</h3>
                         <span>Nos équipes vont rapidement traité votre demande et vous contacter prochainement.</span>
                     </div>

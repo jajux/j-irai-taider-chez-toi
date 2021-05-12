@@ -37,12 +37,24 @@ class ReservationController extends Controller
     }
     
     public function enregistrer_reservation( Request $request){
+        
         $this->validate($request, 
         [
             'services_id'=>'required',
             'resa_description'=>'required',
             'date_rdv'=>'required',
         ]);
+        
+        $reservation = new Reservation();
+        
+        $reservation ->services_id = $request ->input('assistance');
+        $reservation -> resa_description = $request ->input('resa_description');
+        $reservation -> date_rdv =$request ->input('date_rdv');
+        // $reservation-> matin = $request -> input('matin');
+        // $reservation -> apres_midi = $request -> input('apres_midi');
+        
+        $reservation ->save();
+        return redirect('/reservations/formulaire_reservation')->with('status', 'la réservation a bien été enregistré');
     }
     
     /**
