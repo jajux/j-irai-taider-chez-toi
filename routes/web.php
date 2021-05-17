@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
-use GuzzleHttp\Promise\Create;
+use App\Http\Controllers\BricolageController;
+use App\Http\Controllers\AssistanceController;
+
 
 // Page accueil
 Route::get('/', function () {
@@ -15,12 +16,14 @@ Route::get('/services', function (){return view('pages.services');})->middleware
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 
 //User page reservations 
-Route::get('/reservations', function (){return view('pages.reservations');})->middleware(['auth:sanctum', 'verified'])->name('reservations');
+Route::get('/pages/reservations', function (){return view('pages.reservations');})->middleware(['auth:sanctum', 'verified'])->name('reservations');
 
-Route::get('/reservations', [ReservationController::class, 'index'])->middleware(['auth:sanctum', 'verified'])->name('reservations');
+// réservations Assistance numérique
+Route::get('/formulaire_reservation_assistance',[AssistanceController::class,'index'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
+Route::get('/creer_reservation',[AssistanceController::class,'create'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
+Route::post('/enregistrer_assistance',[AssistanceController::class,'store'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations'); 
 
-Route::get('/reservations/formulaire_reservation',[ReservationController::class,'resa'])->middleware(['auth:sanctum', 'verified'])->name('formulaire reservations');
-
-Route::get('/reservations/creer_reservation',[ReservationController::class,'create'])->middleware(['auth:sanctum', 'verified'])->name('formulaire creation reservations');
-
-Route::post('/reservations/enregistrer_reservation',[ReservationController::class,'enregistrer_reservation'])->middleware(['auth:sanctum', 'verified'])->name('enregistrer reservation');
+// réservation Bricolage
+Route::get('/formulaire_reservation_bricolage',[BricolageController::class,'index'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
+Route::get('/creer_reservation',[BricolageController::class,'create'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
+Route::post('/enregistrer_bricolage',[BricolageController::class,'store'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations'); 

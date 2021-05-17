@@ -74,11 +74,6 @@
     top: -10px
 }
 
-.link:hover,
-.link1:hover {
-    color: #e65100
-}
-
 #visit {
     width: 14%;
     height: 280px;
@@ -116,6 +111,21 @@
 .target{
     color:#fff;
 }
+
+
+.list-unstyled{
+    color:whitesmoke;
+  }
+  .fa-angle-right{
+    color:whitesmoke;
+    margin-right: 3px;
+  }
+  .fa-angle-right:hover{
+    color: rgb(222, 139, 66);
+  }
+  .target:hover{
+    color: rgb(222, 139, 66);
+  }
 
 @media only screen and (max-width:1000px) {
    #assoinfo {

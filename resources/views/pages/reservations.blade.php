@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="container-fluid px-1 mx-auto row justify-content-center">
-        <div class="col-xl-9 col-lg-10 ">
+        <div class="col-xl-9 col-lg-10">
             <div class="card1 pl-4 pl-md-5 pr-3 shadow-lg">
                 <div class="row">
                     <div class="left-side col-md-6">
@@ -18,7 +18,7 @@
                     </div>
                     <div class="right-side col-md-6 row justify-content-center">
                         <div class="d-flex">
-                            <img class="girl-img fit-image img-fluid" src="images\info_booking.png">
+                            <img class="girl-img fit-image img-fluid" src={{asset("images\info_booking.png")}}>
                         </div>
                     </div>
                 </div>
@@ -35,13 +35,13 @@
             <div class="row mb-4">
                 <div class="col-md-5 col-lg-3 col-xl-3">
                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                            <img class="img-fluid w-100" src="images\booking_num.png" alt="">
+                        <img class="img-fluid w-100 m-4" src={{asset("images/booking_num.png")}}>
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-9 col-xl-9">
-                    <div class="row">
-                        <div class="col-lg-7 col-xl-7">
-                            <h5>Assistance Numérique</h5>
+                    <div class="row ">
+                        <div class="col-lg-7 col-xl-7 ">
+                            <h5 class="mt-4">Assistance Numérique</h5>
                             <p class="mb-2 text-muted text-uppercase small">Services de proximités</p>
                             <hr>
                             <p class="mb-lg-0">
@@ -51,11 +51,9 @@
                             </p>
                         </div>
                         <div class="col-lg-5 col-xl-5">
-                            <div class="my-4">
-                                <a href="{{URL::to('/reservations/formulaire_reservation') }}">
-                                    <i class="fas fa-shopping-cart pr-2"> Ajouter ce service</i>
+                                <a class="mt-5 btn btn-primary" href="{{URL::to('/formulaire_reservation_assistance') }}">
+                                    <i class="fas fa-shopping-cart pr-2 mr-2"></i> Réserver un service assistance numérique
                                 </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,14 +62,14 @@
             <div class="row mb-4">
                 <div class="col-md-5 col-lg-3 col-xl-3">
                     <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                        <img class="img-fluid w-100" src="images/worker.png" alt="">
+                        <img class="img-fluid w-100 m-4" src={{asset("images/worker.png")}}>
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-9 col-xl-9">
                     <div class="row">
                         <div class="col-lg-7 col-xl-7">
 
-                            <h5>Bricolage</h5>
+                            <h5  class="mt-4">Bricolage</h5>
                             <p class="mb-2 text-muted text-uppercase small">Services de proximités</p>
                             <hr>
                             <p class="mb-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
@@ -80,13 +78,11 @@
                             </p>
                         </div>
                         <div class="col-lg-5 col-xl-5">
-                            <div class="my-4">
-                                    <a href="{{URL::to('/reservations/formulaire_reservation') }}">
-                                        <i class="fas fa-shopping-cart pr-2"> Ajouter ce service</i>
-                                    </a>
-                                </div>
-                        </div>
+                            <a class="mt-5 btn btn-primary" href="{{URL::to('/formulaire_reservation_bricolage') }}">
+                                <i class="fas fa-shopping-cart pr-2 mr-2"></i> Réserver un service bricolage
+                            </a>
                     </div>
+                </div>
                 </div>
             </div>            
         </div>

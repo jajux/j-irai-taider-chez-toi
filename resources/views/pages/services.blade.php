@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class=" font-weight-bold">
+        <h2 class=" font-weight-bold" >
             {{ __('Nos services') }}
         </h2>
     </x-slot>
@@ -33,31 +33,37 @@
                 <img src="images/mentor.png" class="img-fluid" alt="">
             </div>
         </div>
-        <div class="row shadow-lg text-center card-number">
-            <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4">
-                <div class="card border-light p-4">
-                    <div class="card-body">
-                        <h2 class="display-2 mb-2">98%</h2><span>Pourcentage de satisfaction de l'année dernière</span>
+        <div class="container shadow-lg">
+            <h4 class="h1 text-center">Quelques chiffres...</h1>
+                <div class="row shadow-lg text-center card-number m-4" style="background: #418471">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4 ">
+                        <div class="card border-light p-4">
+                            <div class="card-body">
+                                <h2 class="display-2 mb-2">98%</h2><span>Pourcentage de satisfaction de l'année
+                                    dernière</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4">
-                <div class="card border-light p-4">
-                    <div class="card-body">
-                        <h2 class="display-2 mb-2">24/7</h2>
-                        <span>Vous pouvez faire vos demandes — 7j/7 et 24h/24
-                        </span>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4">
+                        <div class="card border-light p-4">
+                            <div class="card-body">
+                                <h2 class="display-2 mb-2">24/7</h2>
+                                <span>Vous pouvez faire vos demandes — 7j/7 et 24h/24
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4">
-                <div class="card border-light p-4">
-                    <div class="card-body">
-                        <h2 class="display-2 mb-2">+100</h2>
-                        <span>Interventions de nos équipes auprès des adhérents</span>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4 mt-4">
+                        <div class="card border-light p-4">
+                            <div class="card-body">
+                                <h2 class="display-2 mb-2">+100</h2>
+                                <span>Interventions de nos équipes auprès des adhérents</span>
+                            </div>
+                        </div>
                     </div>
+                    <p class="text-light ml-3 bold">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+                        necessitatibus.</p>
                 </div>
-            </div>
         </div>
     </div>
 </x-app-layout>

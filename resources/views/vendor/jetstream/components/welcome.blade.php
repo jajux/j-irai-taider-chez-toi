@@ -20,7 +20,7 @@
                         <div class="card-body mt-3 mb-2">
                             <h5 class="card-title font-weight-bold text-capitalize">bricolage</h5>
                             <p class="card-text">Un service de bricolage à domicile est proposé pour les réparations ou améliorations de votre appartement, maison et jardin.</p>
-                            <a href="{{route('services')}}" class="btn btn-success text-capitalize">en savoir plus sur le bricolage</a>
+                            <a href="{{route('services')}}" class="btn btn-secondary text-capitalize">en savoir plus sur le bricolage</a>
                         </div>
                     </div>
                 </div>
@@ -32,9 +32,9 @@
                         </div>
                         <div class="card-body  mt-3 mb-2">
                             <h5 class="card-title font-weight-bold text-capitalize">assistance numérique</h5>
-                            <p class="card-text">Conseils sur l'installation,
-                                l'utilisation de vos appareil numériques domestiques ?</p>
-                            <a href="{{route('services')}}" class="btn btn-success text-capitalize">en savoir plus sur l'assistance numérique</a>
+                            <p class="card-text">Conseils, aides, travaux pratiques sur l'installation, les bonnes pratiques, la sécurisation de vos applications et outils numériques, 
+                                l'utilisation de vos appareils numériques du quotidien ?</p>
+                            <a href="{{route('services')}}" class="btn btn-primary text-capitalize">en savoir plus sur l'assistance numérique</a>
                         </div>
                     </div>
                 </div>

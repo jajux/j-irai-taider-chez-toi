@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReservationsTable extends Migration
+class CreateBricolagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateReservationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::create('bricolages', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('bricolage')->nullable();
+            $table->text('bricolage_description');
+            $table->date('date_bricolage');
+            $table->string('horaire_bricolage');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('assistances_id')->constrained()->onDelete('cascade');
-            $table->foreignId('bricolages_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
+
         });
     }
 
@@ -29,6 +33,6 @@ class CreateReservationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservations');
+        Schema::dropIfExists('bricolages');
     }
 }

@@ -28,6 +28,7 @@
 <body>
     @include('navigation-menu')
     @yield('content')
+    @include('incs.footer')
     
 
 </body>

@@ -69,7 +69,9 @@
         {{ $slot }}
     </main>
     
+    
     @include('incs.footer')
+    
     
     @stack('modals')
     

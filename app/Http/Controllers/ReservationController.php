@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ReservationController extends Controller
 {
@@ -13,17 +14,11 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $services = Service::get();
-        // dd($services);
-        return view('pages.reservations')->with('services', $services);
 
-    }
     public function resa(){
         $reservations = Reservation::get();
         // dd($reservations);
-        return view('reservations.create')->with('reservations', $reservations);
+        return view('reservations.create-assistance')->with('reservations', $reservations);
     }
     
     
@@ -34,31 +29,76 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        return view('reservations.create');
+        $services = Service::get();
+        return view('reservations.create-assistance')->with('services', $services);
     }
     
-    public function enregistrer_reservation( Request $request){
-
+    public function enregistrer_assistance( Request $request){
+        
+        // print('la description du service est '.$request->input('assistance_description'));
         $user = auth()->user();
         $data = $request->all();
         $data['user_id']=$user->id; 
         
         $this->validate($request, 
         [
-            'description'=>'required',
-            'date_rdv'=>'required',
-            'horaire' =>'required',
+           'assistance_description'=>'required',
+            'date_assistance'=>'required',
+            'horaire_assistance',
+            
+            // 'bricolage_description'=>'required',
+            // 'date_bricolage'=>'required',
+            //  'horaire_bricolage',
         ]);
         
         $reservation = new Reservation();
         
-        $reservation ->type_service = $request ->input('assistance');
-        $reservation -> resa_description = $request ->input('description');
-        $reservation -> date_rdv =$request ->input('date_rdv');
-        $reservation-> horaire_rdv = $request -> input('horaire');
-        $reservation->user_id= $request;
+        $reservation ->assistance_numerique = $request ->input('assistance');
+        $reservation -> assistance_description = $request ->input('assistance_description');
+        $reservation -> date_assistance =$request ->input('date_assistance');
+        $reservation-> horaire_assistance = $request -> input('horaire_assistance');
+        $reservation-> horaire_assistance = $request -> input('horaire_assistance');
+
+        $reservation->user_id= $request->input('user_id');
         $reservation ->save();
-        return redirect('pages.reservations')->with('status', 'la réservation a bien été enregistré');
+        
+        Session::put('status', 'la demande '.$reservation->type_service .' a bien été enregistré avec succès');
+        
+        return redirect('reservations.create-assistance');
+    }
+
+    public function enregistrer_reservations_bricolage( Request $request){
+        
+        // print('la description du service est '.$request->input('assistance_description'));
+        $user = auth()->user();
+        $data = $request->all();
+        $data['user_id']=$user->id; 
+        
+        $this->validate($request, 
+        [
+        //    'assistance_description'=>'required',
+        //     'date_assistance'=>'required',
+        //     'horaire_assistance',
+            
+         'bricolage_description'=>'required',
+         'date_bricolage'=>'required',
+         'horaire_bricolage',
+         ]);
+        
+        // $reservation = new Reservation();
+
+        // $reservation->bricolage = $request->input('bricolage');
+        // $reservation -> bricolage_description = $request ->input('bricolage_description');
+        // $reservation -> date_bricolage =$request ->input('date_bricolage');
+        // $reservation-> horaire_bricolage = $request -> input('horaire_bricolage');
+        // $reservation-> horaire_bricolage = $request -> input('horaire_bricolage');
+        
+        // $reservation->user_id= $request->input('user_id');
+        // $reservation ->save();
+        
+        // Session::put('status', 'la demande '.$reservation->type_service .' a bien été enregistré avec succès');
+        
+        // return redirect('reservations.create-bricolage');
     }
     
     /**

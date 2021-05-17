@@ -2,24 +2,30 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
-use Collective\Html\Eloquent\FormAccessible;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Reservation extends Model
+class Bricolage extends Model
 {
     use HasFactory;
-
+        
     protected $fillable = [
+        'bricolage',
+        'bricolage_description',
+        'date_bricolage',
+        'horaire_bricolage',
         'user_id',
         'assistances_id',
-        'bricolages_id',
     ];
+
+    public function enregistrer_reservations_bricolage()
+    {
+        return $this->hasMany(Bricolage::class);
+    }
 
     public function user()
     {
     return $this->belongsTo(User::class);
     }
-    
+
 }
