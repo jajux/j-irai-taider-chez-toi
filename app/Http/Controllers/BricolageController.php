@@ -57,11 +57,11 @@ class BricolageController extends Controller
         $bricolage -> date_bricolage =$request ->input('date_bricolage');
         $bricolage-> horaire_bricolage = $request -> input('horaire_bricolage');
         $bricolage-> horaire_bricolage = $request -> input('horaire_bricolage');
-        
         $bricolage->user_id= $request->input('user_id');
+        
         $bricolage ->save();
 
-        Session::put('status', 'la demande de réservation du service bricolage numérique a bien été enregistré avec succès');
+        Session::put('status', 'Demande de réservations enregistrés.');
         
         return view('reservations.create-bricolage');
 

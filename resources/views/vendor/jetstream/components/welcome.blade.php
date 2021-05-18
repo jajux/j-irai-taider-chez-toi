@@ -1,4 +1,24 @@
-<div class="container-fluid my-5 pt-5 px-5">
+<div class="container-fluid ">
+    <div class="container-fluid p-2 mx-auto row justify-content-center">
+        <div class="col-xl-9 col-lg-10">
+            <div class="card1 pl-4 pl-md-5 pr-3 shadow-lg">
+                <div class="row">
+                    <div class="left-side col-md-6">
+                        <p class="pt-5 mb-0">Services de proximités</p>
+                        <h3 class="mb-0">
+                            <strong>Association de Régie de Quartier</strong>
+                        </h3>
+                        <small class="">Bricolage, Assistance Numérique.</small>
+                    </div>
+                    <div class="right-side col-md-6 row justify-content-center">
+                        <div class="d-flex">
+                            <img class="girl-img fit-image img-fluid" src={{asset("images\services_home.png")}}>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row justify-content-center text-center  px-4">
         <div class="card  shadow-lg p-3 ">
             <div class="row">

@@ -5,7 +5,6 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BricolageController;
 use App\Http\Controllers\AssistanceController;
 
-
 // Page accueil
 Route::get('/', function () {
     return view('pages.home');

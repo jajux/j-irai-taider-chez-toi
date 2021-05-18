@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use App\Models\Assistance;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 class AssistanceController extends Controller
 {
@@ -18,9 +20,8 @@ class AssistanceController extends Controller
     {
         $assistances = Assistance::get();
         $services = Service::get();
-        // dd($assistances);
-        // dd($services);
-        return view('reservations.create-assistance')->with('assistances', $assistances, 'services', $services);
+        $users = User::get();
+        return view('reservations.create-assistance')->with('assistances', $assistances, 'services', $services, 'users', $users);
     }
 
     /**
@@ -31,6 +32,7 @@ class AssistanceController extends Controller
     public function create()
     {
         return view('reservations.create-assistance');
+        
     }
 
     /**
@@ -44,9 +46,10 @@ class AssistanceController extends Controller
         $user = auth()->user();
         $data = $request->all();
         $data['user_id']=$user->id; 
-        
+
         $this->validate($request, 
         [
+            'id',
            'assistance_description'=>'required | min:10',
             'date_assistance'=>'required',
             'horaire_assistance'=>'required',
@@ -61,11 +64,15 @@ class AssistanceController extends Controller
         $assistance-> horaire_assistance = $request -> input('horaire_assistance');
 
         $assistance->user_id= $request->input('user_id');
-        $assistance ->save();
+        // $assistance ->save();
+
+        $assistance = Assistance::get(['assistance_numerique', 'assistance_description', 'date_assistance','horaire_assistance']);
+        // dd($assistance);
+
         
-        Session::put('status', 'la demande de réservation du service assistance numérique a bien été enregistré avec succès');
+        Session::put('status','Votre demande de réservation est bien enregistré');
         
-        return view('reservations.create-assistance');
+        return view('reservations.create-assistance')->with('assistance', $assistance);
     }
 
     /**
@@ -87,7 +94,7 @@ class AssistanceController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**

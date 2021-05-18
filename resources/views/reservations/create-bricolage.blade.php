@@ -15,9 +15,25 @@
     @endif
     @if (Session::has('status'))
         <div class="alert alert-success">
-            {{ Session::get('status') }}
-            {{ Session::put('status', null) }}
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h5 class="card-title">Félicitations</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</p>
+                        {{ Session::get('status') }}
+                    </div>
+                    <div class="card-footer">
+                        <p>Nos équipes vont rapidement prendre contact avec vous, pour la confirmation des dates et
+                            horaires.</p>
+                            <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-primary">Retour</a>
+                    </div>
+                    {{ Session::put('status', null) }}
+                </div>
+            </div>
         </div>
+    @endif
     @endif
     <section class="resa-create">
         {{-- formulaire bricolage --}}
@@ -40,7 +56,6 @@
                                     <h5 class="card-title font-weight-bold text-capitalize">Remplissez le formulaire
                                     </h5>
                                     <small>Tous les champs sont obligatoires *</small>
-                                    <div class="card">
                                         <form action="{{ url('/enregistrer_bricolage') }}" method="POST"
                                             class="form-horizontal mr-3 ml-3">
                                             {{ csrf_field() }}
@@ -80,7 +95,6 @@
                                                 <input type="submit" value="Valider" class="btn text-light"
                                                     style="background: #418471">
                                         </form>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -90,12 +104,6 @@
                             <div class="card-body mt-3 mb-2 ">
                                 <img src="{{ asset('images\bricolage.png') }}" class="img-fluid">
                             </div>
-                        </div>
-                        <div class=" btn btn-warning">
-                            <p>Lorem ipsum dolor sit amet</p>
-                        </div>
-                        <div class="btn btn-info">
-                            <p>Lorem ipsum dolor sit amet</p>
                         </div>
                     </div>
                 </div>

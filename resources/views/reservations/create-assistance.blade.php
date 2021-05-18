@@ -15,8 +15,23 @@
     @endif
     @if (Session::has('status'))
         <div class="alert alert-success">
-            {{ Session::get('status') }}
-            {{ Session::put('status', null) }}
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h5 class="card-title">Félicitations</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</p>
+                        {{ Session::get('status') }}
+                    </div>
+                    <div class="card-footer">
+                        <p>Nos équipes vont rapidement prendre contact avec vous, pour la confirmation des dates et
+                            horaires.</p>
+                            <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-primary">Retour</a>
+                    </div>
+                    {{ Session::put('status', null) }}
+                </div>
+            </div>
         </div>
     @endif
     <section class="resa-assistance">
@@ -37,12 +52,6 @@
                             <div class="card profile-card-5" style="background: #418471">
                                 <img src="{{ asset('images\assistance.png') }}" alt="">
                             </div>
-                            <div class=" btn btn-warning">
-                                <p>Lorem ipsum dolor sit amet</p>
-                            </div>
-                            <div class="btn btn-info">
-                                <p>Lorem ipsum dolor sit amet</p>
-                            </div>
                         </div>
                         <div class="col-md-6 mt-6 text-center">
                             <div class="card profile-card-5 bg-secondary ">
@@ -50,48 +59,44 @@
                                     <h5 class="card-title font-weight-bold text-capitalize">Remplissez le formulaire
                                     </h5>
                                     <small>Tous les champs sont obligatoires *</small>
-                                    <div class="card">
-                                        <form action="{{ url('/enregistrer_assistance') }}" method="POST"
-                                            class="form-horizontal mr-3 ml-3">
-                                            {{ csrf_field() }}
-                                            <input type="hidden" id="user_id" value="{{ Auth::user()->id }}"
-                                                name="user_id">
-                                            <input type="hidden" id="assistance" name="assistance" checked>
-                                            <div class="form-group mt-3">
-                                                <label><i class="fas fa-pen-square mr-1"
-                                                        style="color: #418471"></i>Description</label>
-                                                <textarea name="assistance_description" cols="30" rows="8"
-                                                    class="form-control"
-                                                    placeholder="décrivez votre besoin numérique"></textarea>
+                                    <form action="{{ url('/enregistrer_assistance') }}" method="POST"
+                                        class="form-horizontal mr-3 ml-3" id="bricoform">
+                                        @csrf
+                                        <input type="hidden" id="user_id" value="{{ Auth::user()->id }}"
+                                            name="user_id">
+                                        <input type="hidden" id="assistance" name="assistance" checked>
+                                        <div class="form-group mt-3">
+                                            <label><i class="fas fa-pen-square mr-1"
+                                                    style="color: #418471"></i>Description</label>
+                                            <textarea name="assistance_description" cols="30" rows="8"
+                                                class="form-control"
+                                                placeholder="décrivez votre besoin numérique"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><i class="fas fa-calendar-alt mr-1" style="color: #418471"></i>date
+                                            </label>
+                                            <input type="date" name="date_assistance"
+                                                placeholder="Date de rendez-vous souhaité" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><i class="fas fa-clock mr-1" style="color: #418471"></i>Plage
+                                                horaires</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input class="custom-control-input" type="radio" value="Matin"
+                                                    id="Matin" name="horaire_assistance">
+                                                <label class="custom-control-label" for="Matin">Matin</label>
                                             </div>
-                                            <div class="form-group">
-                                                <label><i class="fas fa-calendar-alt mr-1"
-                                                        style="color: #418471"></i>date
-                                                </label>
-                                                <input type="date" name="date_assistance"
-                                                    placeholder="Date de rendez-vous souhaité" class="form-control">
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input class="custom-control-input" type="radio" value="Après-midi"
+                                                    id="Après-midi" name="horaire_assistance">
+                                                <label class="custom-control-label" for="Après-midi">Après-midi</label>
                                             </div>
-                                            <div class="form-group">
-                                                <label><i class="fas fa-clock mr-1" style="color: #418471"></i>Plage
-                                                    horaires</label>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input class="custom-control-input" type="radio" value="Matin"
-                                                        id="Matin" name="horaire_assistance">
-                                                    <label class="custom-control-label" for="Matin">Matin</label>
-                                                </div>
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input class="custom-control-input" type="radio" value="Après-midi"
-                                                        id="Après-midi" name="horaire_assistance">
-                                                    <label class="custom-control-label"
-                                                        for="Après-midi">Après-midi</label>
-                                                </div>
-                                            </div>
-                                            <input type="submit" value="Valider" class="btn text-light"
-                                                style="background: #418471">
-                                        </form>
-                                    </div>
+                                        </div>
+                                        <input type="submit" value="Valider" class="btn text-light"
+                                            style="background: #418471">
+                                    </form>
                                 </div>
                             </div>
                         </div>
