@@ -27,13 +27,14 @@
                     <div class="card-footer">
                         <p>Nos équipes vont rapidement prendre contact avec vous, pour la confirmation des dates et
                             horaires.</p>
-                            <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-primary">Retour</a>
+                        <a href="{{ route('accueil') }}" class="btn mt-3 mb-5 btn-primary">Retour à l' accueil</a>
+                        <a href="{{ url('/formulaire_reservation_assistance') }}" class="btn mt-3 mb-5 btn-info">Ajouter
+                            un service assistance numérique</a>
                     </div>
                     {{ Session::put('status', null) }}
                 </div>
             </div>
         </div>
-    @endif
     @endif
     <section class="resa-create">
         {{-- formulaire bricolage --}}
@@ -56,45 +57,43 @@
                                     <h5 class="card-title font-weight-bold text-capitalize">Remplissez le formulaire
                                     </h5>
                                     <small>Tous les champs sont obligatoires *</small>
-                                        <form action="{{ url('/enregistrer_bricolage') }}" method="POST"
-                                            class="form-horizontal mr-3 ml-3">
-                                            {{ csrf_field() }}
-                                            <input type="hidden" id="user_id" value="{{ Auth::user()->id }}"
-                                                name="user_id">
-                                            <input type="hidden" id="bricolage" name="bricolage">
-                                            <div class="form-group  mt-3">
-                                                <label><i class="fas fa-pen-square mr-1"
-                                                        style="color: #418471"></i>Description</label>
-                                                <textarea name="bricolage_description" cols="30" rows="8"
-                                                    class="form-control"
-                                                    placeholder="décrivez votre besoin bricolage"></textarea>
+                                    <form action="{{ url('/enregistrer_bricolage') }}" method="POST"
+                                        class="form-horizontal mr-3 ml-3">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" id="user_id" value="{{ Auth::user()->id }}"
+                                            name="user_id">
+                                        <input type="hidden" id="bricolage" name="bricolage">
+                                        <div class="form-group  mt-3">
+                                            <label><i class="fas fa-pen-square mr-1"
+                                                    style="color: #418471"></i>Description</label>
+                                            <textarea name="bricolage_description" cols="30" rows="8"
+                                                class="form-control"
+                                                placeholder="décrivez votre besoin bricolage"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><i class="fas fa-calendar-alt mr-1"
+                                                    style="color: #418471"></i>date</label>
+                                            <input type="date" name="date_bricolage"
+                                                placeholder="Date de rendez-vous souhaité" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label><i class="fas fa-clock mr-1" style="color: #418471"></i>Plage
+                                                horaires</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input class="custom-control-input" type="radio" value="Matin_brico"
+                                                    id="matin_brico" name="horaire_bricolage">
+                                                <label class="custom-control-label" for="matin_brico">Matin</label>
                                             </div>
-                                            <div class="form-group">
-                                                <label><i class="fas fa-calendar-alt mr-1"
-                                                        style="color: #418471"></i>date</label>
-                                                <input type="date" name="date_bricolage"
-                                                    placeholder="Date de rendez-vous souhaité" class="form-control">
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input class="custom-control-input" type="radio"
+                                                    value="Apres_midi_brico" id="apres_brico" name="horaire_bricolage">
+                                                <label class="custom-control-label" for="apres_brico">Après-midi</label>
                                             </div>
-                                            <div class="form-group">
-                                                <label><i class="fas fa-clock mr-1" style="color: #418471"></i>Plage
-                                                    horaires</label>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input class="custom-control-input" type="radio" value="Matin_brico"
-                                                        id="matin_brico" name="horaire_bricolage">
-                                                    <label class="custom-control-label" for="matin_brico">Matin</label>
-                                                </div>
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input class="custom-control-input" type="radio"
-                                                        value="Apres_midi_brico" id="apres_brico"
-                                                        name="horaire_bricolage">
-                                                    <label class="custom-control-label"
-                                                        for="apres_brico">Après-midi</label>
-                                                </div>
-                                                <input type="submit" value="Valider" class="btn text-light"
-                                                    style="background: #418471">
-                                        </form>
+                                            <input type="submit" value="Valider" class="btn text-light"
+                                                style="background: #418471">
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -105,6 +104,7 @@
                                 <img src="{{ asset('images\bricolage.png') }}" class="img-fluid">
                             </div>
                         </div>
+                        <a href="{{ route('accueil') }}" class="btn mt-3 mb-5 btn-danger">Annuler</a>
                     </div>
                 </div>
             </div>

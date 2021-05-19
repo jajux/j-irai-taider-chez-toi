@@ -27,7 +27,9 @@
                     <div class="card-footer">
                         <p>Nos équipes vont rapidement prendre contact avec vous, pour la confirmation des dates et
                             horaires.</p>
-                            <a href="{{ route('reservations') }}" class="btn mt-3 mb-5 btn-primary">Retour</a>
+                        <a href="{{ route('accueil') }}" class="btn mt-3 mb-5 btn-primary">Retour à l' accueil</a>
+                        <a href="{{ url('/formulaire_reservation_bricolage') }}" class="btn mt-3 mb-5 btn-info">Ajouter
+                            un service bricolage</a>
                     </div>
                     {{ Session::put('status', null) }}
                 </div>
@@ -52,6 +54,7 @@
                             <div class="card profile-card-5" style="background: #418471">
                                 <img src="{{ asset('images\assistance.png') }}" alt="">
                             </div>
+                            <a href="{{ route('accueil') }}" class="btn mt-3 mb-5 btn-danger">Annuler</a>
                         </div>
                         <div class="col-md-6 mt-6 text-center">
                             <div class="card profile-card-5 bg-secondary ">

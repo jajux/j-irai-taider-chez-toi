@@ -12,7 +12,7 @@
                     </div>
                     <div class="right-side col-md-6 row justify-content-center">
                         <div class="d-flex">
-                            <img class="girl-img fit-image img-fluid" src={{asset("images\services_home.png")}}>
+                            <img class="girl-img fit-image img-fluid" src={{asset("images/services_home.png")}}>
                         </div>
                     </div>
                 </div>
@@ -40,20 +40,19 @@
                         <div class="card-body mt-3 mb-2">
                             <h5 class="card-title font-weight-bold text-capitalize">bricolage</h5>
                             <p class="card-text">Un service de bricolage à domicile est proposé pour les réparations ou améliorations de votre appartement, maison et jardin.</p>
-                            <a href="{{route('services')}}" class="btn btn-secondary text-capitalize">en savoir plus sur le bricolage</a>
+                            <a href="{{route('services')}}" class="btn btn-primary text-capitalize">en savoir plus sur le bricolage</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mt-6 text-center">
                     <div class="card profile-card-5">
                         <div class="card-img-block bg-secondary">
-                            <img class="card-img-top" class="img-fluid  max-width: 100% height: auto"
+                            <img class="card-img-top mb-4" class="img-fluid  max-width: 100% height: auto"
                                 src="images\numerique.png" alt="illustration assistance numérique">
                         </div>
                         <div class="card-body  mt-3 mb-2">
                             <h5 class="card-title font-weight-bold text-capitalize">assistance numérique</h5>
-                            <p class="card-text">Conseils, aides, travaux pratiques sur l'installation, les bonnes pratiques, la sécurisation de vos applications et outils numériques, 
-                                l'utilisation de vos appareils numériques du quotidien ?</p>
+                            <p class="card-text">Conseils, aides, travaux pratiques sur l'installation, les bonnes pratiques, la sécurisation de vos applications et outils numériques.</p>
                             <a href="{{route('services')}}" class="btn btn-primary text-capitalize">en savoir plus sur l'assistance numérique</a>
                         </div>
                     </div>

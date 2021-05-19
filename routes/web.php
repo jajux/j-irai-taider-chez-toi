@@ -20,9 +20,9 @@ Route::get('/pages/reservations', function (){return view('pages.reservations');
 // réservations Assistance numérique
 Route::get('/formulaire_reservation_assistance',[AssistanceController::class,'index'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
 Route::get('/creer_reservation',[AssistanceController::class,'create'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
-Route::post('/enregistrer_assistance',[AssistanceController::class,'store'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations'); 
+Route::post('/enregistrer_assistance',[AssistanceController::class,'store'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations_assistance'); 
 
 // réservation Bricolage
 Route::get('/formulaire_reservation_bricolage',[BricolageController::class,'index'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
 Route::get('/creer_reservation',[BricolageController::class,'create'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
-Route::post('/enregistrer_bricolage',[BricolageController::class,'store'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations'); 
+Route::post('/enregistrer_bricolage',[BricolageController::class,'store'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations_bricolage'); 

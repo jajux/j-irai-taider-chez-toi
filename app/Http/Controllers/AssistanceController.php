@@ -57,11 +57,11 @@ class AssistanceController extends Controller
         
         $assistance = new Assistance();
         
-        $assistance ->assistance_numerique = $request ->input('assistance');
-        $assistance -> assistance_description = $request ->input('assistance_description');
-        $assistance -> date_assistance =$request ->input('date_assistance');
-        $assistance-> horaire_assistance = $request -> input('horaire_assistance');
-        $assistance-> horaire_assistance = $request -> input('horaire_assistance');
+        $assistance ->assistance_numerique =$request->input('assistance');
+        $assistance ->assistance_description =$request->input('assistance_description');
+        $assistance ->date_assistance =$request->input('date_assistance');
+        $assistance->horaire_assistance =$request->input('horaire_assistance');
+        $assistance->horaire_assistance =$request->input('horaire_assistance');
 
         $assistance->user_id= $request->input('user_id');
         // $assistance ->save();
