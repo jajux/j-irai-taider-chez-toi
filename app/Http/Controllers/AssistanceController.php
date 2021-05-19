@@ -21,7 +21,7 @@ class AssistanceController extends Controller
         $assistances = Assistance::get();
         $services = Service::get();
         $users = User::get();
-        return view('reservations.create-assistance')->with('assistances', $assistances, 'services', $services, 'users', $users);
+        return view('reservations.create-assistance')->with('assistances', $assistances, 'services', $services,'users', $users);
     }
 
     /**
@@ -49,7 +49,6 @@ class AssistanceController extends Controller
 
         $this->validate($request, 
         [
-            'id',
            'assistance_description'=>'required | min:10',
             'date_assistance'=>'required',
             'horaire_assistance'=>'required',
@@ -62,9 +61,8 @@ class AssistanceController extends Controller
         $assistance ->date_assistance =$request->input('date_assistance');
         $assistance->horaire_assistance =$request->input('horaire_assistance');
         $assistance->horaire_assistance =$request->input('horaire_assistance');
-
         $assistance->user_id= $request->input('user_id');
-        // $assistance ->save();
+        $assistance ->save();
 
         $assistance = Assistance::get(['assistance_numerique', 'assistance_description', 'date_assistance','horaire_assistance']);
         // dd($assistance);

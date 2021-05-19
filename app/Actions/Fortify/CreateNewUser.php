@@ -2,14 +2,14 @@
 
 namespace App\Actions\Fortify;
 
-use App\Models\{User,Resa};
+use App\Mail\Registered;
+use App\Models\{User,Assistance};
 use Illuminate\Http\Request;
 use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\Registered;
 
 
 class CreateNewUser implements CreatesNewUsers
@@ -50,13 +50,13 @@ class CreateNewUser implements CreatesNewUsers
     // Email
     protected function registered(Request $request, $user)
 {
-    $resa = Resa::firstOrFail();
-    Mail::to($user)->send(new Registered($resa));
-    $admins = User::whereAdmin(true)->get();
-    foreach($admins as $admin) {
-        // Notification à l'admin à mettre en place
-    }        
-    return redirect(route('adresses.create'))->with('message', config('messages.registered'));
+    $assistance = Assistance::firstOrFail();
+    Mail::to($user)->send(new Registered($assistance));
+    // $admins = User::whereAdmin(true)->get();
+    // foreach($admins as $admin) {
+    //     // Notification à l'admin à mettre en place
+    // }        
+    return redirect(route('reservations.create-assistance'))->with('message', config('messages.registered'));
 }
 
 }

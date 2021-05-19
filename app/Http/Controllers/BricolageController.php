@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Service;
 use App\Models\Bricolage;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class BricolageController extends Controller
     {
         $bricolages = Bricolage::get();
         $services = Service::get();
-        return view('reservations.create-bricolage')->with('bricolages', $bricolages, 'services', $services);
+        $users = User::get();
+        return view('reservations.create-bricolage')->with('bricolages', $bricolages, 'services', $services,'users', $users );
     }
 
     /**

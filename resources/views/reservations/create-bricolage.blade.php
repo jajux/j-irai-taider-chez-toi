@@ -18,20 +18,19 @@
             <div class="card">
                 <div class="card-content">
                     <div class="card-header">
-                        <h5 class="card-title">Félicitations</h5>
+                        <h5 class="card-title">Félicitations {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h5>
                     </div>
                     <div class="card-body">
-                        <p>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</p>
-                        {{ Session::get('status') }}
-                    </div>
-                    <div class="card-footer">
+                        <p>{{ Session::get('status') }}{{ Session::put('status', null)}}
+                        </p>
                         <p>Nos équipes vont rapidement prendre contact avec vous, pour la confirmation des dates et
                             horaires.</p>
+                    </div>
+                    <div class="card-footer">
                         <a href="{{ route('accueil') }}" class="btn mt-3 mb-5 btn-primary">Retour à l' accueil</a>
                         <a href="{{ url('/formulaire_reservation_assistance') }}" class="btn mt-3 mb-5 btn-info">Ajouter
                             un service assistance numérique</a>
                     </div>
-                    {{ Session::put('status', null) }}
                 </div>
             </div>
         </div>

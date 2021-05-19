@@ -105,7 +105,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script type="text/javascript"
-    src="https://maps.google.com/maps/api/js?key=AIzaSyAAhU2l1X6LuhOrmICxF2M2XSurtoFt4tI&amp;libraries=places&callback=initAutocomplete">
+    src="https://maps.google.com/maps/api/js?key=AIzaSyAAhU2l1X6LuhOrmICxF2M2XSurtoFt4tI&amp;libraries=places&region=FR&callback=initAutocomplete">
 </script>
 <script>
     $(document).ready(function() {
@@ -121,7 +121,8 @@
     function initialize() {
         var options = {
             componentRestrictions: {
-                country: "FR"
+                country: "FR",
+
             }
         };
         var input = document.getElementById('autocomplete');
