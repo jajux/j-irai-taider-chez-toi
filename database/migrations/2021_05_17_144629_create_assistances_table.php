@@ -19,8 +19,8 @@ class CreateAssistancesTable extends Migration
             $table->text('assistance_description');
             $table->date('date_assistance');
             $table->string('horaire_assistance');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('bricolages_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->onDelete('cascade');
+            $table->foreignId('bricolages_id')->onDelete('cascade');
 
             $table->timestamps();
         });

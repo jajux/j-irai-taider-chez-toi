@@ -1,5 +1,6 @@
 <?php
 
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BricolageController;
@@ -26,3 +27,7 @@ Route::post('/enregistrer_assistance',[AssistanceController::class,'store'])->mi
 Route::get('/formulaire_reservation_bricolage',[BricolageController::class,'index'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
 Route::get('/creer_reservation',[BricolageController::class,'create'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
 Route::post('/enregistrer_bricolage',[BricolageController::class,'store'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations'); 
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

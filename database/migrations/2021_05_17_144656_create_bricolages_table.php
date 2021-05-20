@@ -19,8 +19,8 @@ class CreateBricolagesTable extends Migration
             $table->text('bricolage_description');
             $table->date('date_bricolage');
             $table->string('horaire_bricolage');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('assistances_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->onDelete('cascade');
+            $table->foreignId('assistances_id')->onDelete('cascade');
             $table->timestamps();
 
         });
