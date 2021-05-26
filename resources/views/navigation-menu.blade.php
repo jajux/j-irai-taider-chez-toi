@@ -16,16 +16,14 @@
             <ul class="navbar-nav ml-auto align-items-baseline">
 
                 @if (Auth::user())
-                <x-jet-nav-link href="/" :active="request()->routeIs('home')"
-                    class="text-capitalize font-weight-bold text-success">
-                    {{ __('accueil') }}
-                </x-jet-nav-link>
-
+                    <x-jet-nav-link href="/" :active="request()->routeIs('home')"
+                        class="text-capitalize font-weight-bold text-success">
+                        {{ __('accueil') }}
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('services') }}" :active="request()->routeIs('services')"
                         class="text-capitalize font-weight-bold text-success">
                         {{ __('services') }}
                     </x-jet-nav-link>
-
                     <x-jet-nav-link href="{{ route('reservations') }}" :active="request()->routeIs('reservations')"
                         class="text-capitalize font-weight-bold text-success">
                         {{ __('réservations') }}
@@ -40,13 +38,18 @@
                         {{ __('inscription') }}
                     </x-jet-nav-link>
                 @endif
-
+        {{-- @if(Auth::user('admin'))            
+                <x-jet-nav-link href="{{ route('voyager.dashboard') }}" :active="request()->routeIs('admin')"
+                    class="text-capitalize font-weight-bold text-success"  target="_blank"
+                    rel="noopener noreferrer">
+                    {{ __('espace administrateur') }}
+                </x-jet-nav-link>
+                @endif  --}}
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <x-jet-dropdown id="teamManagementDropdown">
                         <x-slot name="trigger">
                             {{ Auth::user()->currentTeam->firstname }}
-
                             <svg class="ml-2" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
@@ -125,7 +128,7 @@
 
                             <!-- Authentication -->
                             <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
+                                                                     document.getElementById('logout-form').submit();">
                                 {{ __('Log out') }}
                             </x-jet-dropdown-link>
                             <form method="POST" id="logout-form" action="{{ route('logout') }}">

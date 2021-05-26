@@ -92,7 +92,7 @@ return [
     ],
 
     'to' => [
-        'address' =>  env('MAIL_FROM_ADDRESS', 'projet.garros.com'),
+        'address' =>  env('MAIL_FROM_ADDRESS', 'utilisateur@email.com'),
         'name' => 'Dev Example'
     ],
 

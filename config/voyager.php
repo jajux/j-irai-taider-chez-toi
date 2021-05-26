@@ -42,7 +42,7 @@ return [
     */
 
     'models' => [
-       // 'namespace' => 'App\\Models\\',
+       'namespace' => 'App\\Models\\',
     ],
 
     /*
@@ -145,7 +145,10 @@ return [
         ],
 
         'widgets' => [
-
+            'TCG\\Voyager\\Widgets\\PageDimmer',
+            'TCG\\Voyager\\Widgets\\PostDimmer',
+            'TCG\\Voyager\\Widgets\\UserDimmer',
+            
         ],
 
     ],
@@ -182,7 +185,7 @@ return [
     |
     */
 
-    'primary_color' => '#22A7F0',
+    'primary_color' => '#418471',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 

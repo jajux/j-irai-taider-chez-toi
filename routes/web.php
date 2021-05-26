@@ -28,6 +28,7 @@ Route::get('/formulaire_reservation_bricolage',[BricolageController::class,'inde
 Route::get('/creer_reservation',[BricolageController::class,'create'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations');
 Route::post('/enregistrer_bricolage',[BricolageController::class,'store'])->middleware(['auth:sanctum', 'verified'])->name('creer_reservations'); 
 
+// Admin
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
