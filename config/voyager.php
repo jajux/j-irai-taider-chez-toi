@@ -14,6 +14,7 @@ return [
         'add_default_role_on_register' => true,
         'default_role'                 => 'user',
         'default_avatar'               => 'users/default.png',
+        'namespace'                    => App\User::class,
         'redirect'                     => '/admin',
     ],
 
@@ -42,7 +43,7 @@ return [
     */
 
     'models' => [
-       'namespace' => 'App\\Models\\',
+    //    'namespace' => 'App\\Models\\',
     ],
 
     /*
@@ -145,10 +146,7 @@ return [
         ],
 
         'widgets' => [
-            'TCG\\Voyager\\Widgets\\PageDimmer',
-            'TCG\\Voyager\\Widgets\\PostDimmer',
-            'TCG\\Voyager\\Widgets\\UserDimmer',
-            
+              'TCG\\Voyager\\Widgets\\UserDimmer',
         ],
 
     ],

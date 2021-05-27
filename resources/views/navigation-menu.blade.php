@@ -38,13 +38,13 @@
                         {{ __('inscription') }}
                     </x-jet-nav-link>
                 @endif
-        {{-- @if(Auth::user('admin'))            
+        @if(Auth::user('admin'))            
                 <x-jet-nav-link href="{{ route('voyager.dashboard') }}" :active="request()->routeIs('admin')"
                     class="text-capitalize font-weight-bold text-success"  target="_blank"
                     rel="noopener noreferrer">
                     {{ __('espace administrateur') }}
                 </x-jet-nav-link>
-                @endif  --}}
+                @endif 
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <x-jet-dropdown id="teamManagementDropdown">
