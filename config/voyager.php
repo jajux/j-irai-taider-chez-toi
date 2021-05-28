@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\App;
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -146,7 +148,9 @@ return [
         ],
 
         'widgets' => [
-              'TCG\\Voyager\\Widgets\\UserDimmer',
+            'TCG\\Voyager\\Widgets\\UserDimmer',
+            'App\\Widgets\\AssistanceDimmer',
+            'App\\Widgets\\BricolageDimmer',
         ],
 
     ],
